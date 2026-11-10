@@ -752,6 +752,33 @@ window.addEventListener("popstate", () => {
   else { hideSheet(); closeDrawers(); }
 });
 
+/* ---------- Hero spotlight: mouse-only, scoped to the hero ---------- */
+const heroSpotlight = document.querySelector(".hero");
+const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (heroSpotlight && finePointer.matches && !reducedMotion.matches) {
+  let spotlightFrame = 0;
+  let spotlightX = 62;
+  let spotlightY = 38;
+  const paintSpotlight = () => {
+    heroSpotlight.style.setProperty("--hero-spot-x", spotlightX + "%");
+    heroSpotlight.style.setProperty("--hero-spot-y", spotlightY + "%");
+    spotlightFrame = 0;
+  };
+  heroSpotlight.addEventListener("pointermove", (event) => {
+    if (event.pointerType !== "mouse") return;
+    const rect = heroSpotlight.getBoundingClientRect();
+    spotlightX = Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100));
+    spotlightY = Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100));
+    if (!spotlightFrame) spotlightFrame = window.requestAnimationFrame(paintSpotlight);
+  }, { passive: true });
+  heroSpotlight.addEventListener("pointerleave", () => {
+    spotlightX = 62;
+    spotlightY = 38;
+    if (!spotlightFrame) spotlightFrame = window.requestAnimationFrame(paintSpotlight);
+  }, { passive: true });
+}
+
 /* ---------- Init ---------- */
 updateCartBadge();
 updateWishBadge();

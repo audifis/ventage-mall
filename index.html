@@ -73,9 +73,10 @@
       alt="Galería comercial contemporánea con boutiques y escaleras mecánicas"
       class="hero-img" fetchpriority="high">
     <div class="hero-shade"></div>
+    <div class="hero-light" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="hero-kicker">VENTAGE MALL <span>·</span> MALABO</p>
-      <h1 class="hero-title">Tu estilo,<br><em>sin límites.</em></h1>
+      <h1 class="hero-title">Tu estilo,<br><em class="hero-title-accent">sin límites.</em></h1>
       <p class="hero-sub">Moda, accesorios y grandes marcas en un solo lugar.</p>
       <div class="hero-actions">
         <button class="hero-cta" type="button" data-rayon="todo">Descubrir las colecciones <span>→</span></button>
@@ -94,11 +95,46 @@
       <div class="promo-icon">✦</div>
       <div class="promo-kicker">SELECCIÓN DE TEMPORADA</div>
       <span class="promo-divider"></span>
-      <div class="promo-texts"><span>Hasta</span><strong>−30 %</strong><small id="promoTimer">Jusqu’au 31 décembre</small></div>
+      <div class="promo-texts"><span>Hasta</span><strong class="promo-highlight">−30 %</strong><small id="promoTimer">Jusqu’au 31 décembre</small></div>
       <span class="promo-note">En una selección de artículos</span>
       <button class="promo-cta" id="promoCta">Aprovechar <span>→</span></button>
     </div>
   </section>
+
+  <section class="brand-marquee-band brand-marquee-band-top" id="brands" aria-label="Marcas Ventage Mall">
+  <div class="brand-band-heading">
+    <span class="brand-band-kicker">LAS MARCAS QUE MARCAN LA DIFERENCIA</span>
+    <span class="brand-band-sub">Grandes firmas. Un mismo destino.</span>
+  </div>
+  <div class="brand-marquee" role="group" aria-label="Marcas disponibles. Pasa el cursor para detener el movimiento.">
+    <div class="brand-strip-track">
+      <div class="brand-strip">
+        <button class="brand-logo brand-logo--calvin-klein" type="button" data-brand="Calvin Klein" aria-label="Ver productos Calvin Klein"><span class="brand-wordmark" aria-hidden="true">CALVIN KLEIN</span></button>
+        <button class="brand-logo brand-logo--boss" type="button" data-brand="BOSS" aria-label="Ver productos BOSS"><span class="brand-wordmark" aria-hidden="true">BOSS</span></button>
+        <button class="brand-logo brand-logo--ea7" type="button" data-brand="EA7" aria-label="Ver productos EA7"><span class="brand-wordmark" aria-hidden="true">EA7</span></button>
+        <button class="brand-logo brand-logo--love-moschino" type="button" data-brand="Love Moschino" aria-label="Ver productos Love Moschino"><span class="brand-wordmark" aria-hidden="true">LOVE MOSCHINO</span></button>
+        <button class="brand-logo brand-logo--aldo" type="button" data-brand="ALDO" aria-label="Ver productos ALDO"><span class="brand-wordmark" aria-hidden="true">ALDO</span></button>
+        <button class="brand-logo brand-logo--jack-jones" type="button" data-brand="Jack &amp; Jones" aria-label="Ver productos Jack &amp; Jones"><span class="brand-wordmark" aria-hidden="true">JACK &amp; JONES</span></button>
+        <button class="brand-logo brand-logo--fossil" type="button" data-brand="Fossil" aria-label="Ver productos Fossil"><span class="brand-wordmark" aria-hidden="true">FOSSIL</span></button>
+        <button class="brand-logo brand-logo--only" type="button" data-brand="ONLY" aria-label="Ver productos ONLY"><span class="brand-wordmark" aria-hidden="true">ONLY</span></button>
+        <button class="brand-logo brand-logo--liu-jo" type="button" data-brand="LIU JO" aria-label="Ver productos LIU JO"><span class="brand-wordmark" aria-hidden="true">LIU JO</span></button>
+        <button class="brand-logo brand-logo--tous" type="button" data-brand="TOUS" aria-label="Ver productos TOUS"><span class="brand-wordmark" aria-hidden="true">TOUS</span></button>
+      </div>
+      <div class="brand-strip brand-strip-clone" aria-hidden="true">
+        <span class="brand-logo brand-logo--calvin-klein" aria-hidden="true"><span class="brand-wordmark">CALVIN KLEIN</span></span>
+        <span class="brand-logo brand-logo--boss" aria-hidden="true"><span class="brand-wordmark">BOSS</span></span>
+        <span class="brand-logo brand-logo--ea7" aria-hidden="true"><span class="brand-wordmark">EA7</span></span>
+        <span class="brand-logo brand-logo--love-moschino" aria-hidden="true"><span class="brand-wordmark">LOVE MOSCHINO</span></span>
+        <span class="brand-logo brand-logo--aldo" aria-hidden="true"><span class="brand-wordmark">ALDO</span></span>
+        <span class="brand-logo brand-logo--jack-jones" aria-hidden="true"><span class="brand-wordmark">JACK &amp; JONES</span></span>
+        <span class="brand-logo brand-logo--fossil" aria-hidden="true"><span class="brand-wordmark">FOSSIL</span></span>
+        <span class="brand-logo brand-logo--only" aria-hidden="true"><span class="brand-wordmark">ONLY</span></span>
+        <span class="brand-logo brand-logo--liu-jo" aria-hidden="true"><span class="brand-wordmark">LIU JO</span></span>
+        <span class="brand-logo brand-logo--tous" aria-hidden="true"><span class="brand-wordmark">TOUS</span></span>
+      </div>
+    </div>
+  </div>
+</section>
 
   <main class="catalog home-catalog">
     <section class="cat-section category-section" id="collections">
@@ -125,41 +161,6 @@
       <div class="grid product-rail" id="newArrivalsGrid"></div>
     </section>
 
-    <section class="brand-section" id="brands">
-      <div class="section-heading">
-        <div><span class="eyebrow">GRANDES MARCAS, GRAN ESTILO</span><h2 class="section-title">Marcas Ventage</h2></div>
-        <span class="heading-note">Una selección con personalidad</span>
-      </div>
-      <div class="brand-marquee" aria-label="Nuestras marcas">
-  <div class="brand-strip-track">
-    <div class="brand-strip">
-<button type="button" data-brand="Calvin Klein">Calvin Klein</button>
-        <button type="button" data-brand="BOSS">BOSS</button>
-        <button type="button" data-brand="EA7">EA7</button>
-        <button type="button" data-brand="Love Moschino">LOVE MOSCHINO</button>
-        <button type="button" data-brand="ALDO">ALDO</button>
-        <button type="button" data-brand="Jack & Jones">JACK &amp; JONES</button>
-        <button type="button" data-brand="Fossil">FOSSIL</button>
-        <button type="button" data-brand="ONLY">ONLY</button>
-        <button type="button" data-brand="LIU JO">LIU JO</button>
-        <button type="button" data-brand="TOUS">TOUS</button>
-    </div>
-    <div class="brand-strip brand-strip-clone" aria-hidden="true">
-<span>Calvin Klein</span>
-<span>BOSS</span>
-<span>EA7</span>
-<span>LOVE MOSCHINO</span>
-<span>ALDO</span>
-<span>JACK & JONES</span>
-<span>FOSSIL</span>
-<span>ONLY</span>
-<span>LIU JO</span>
-<span>TOUS</span>
-    </div>
-  </div>
-</div>
-    </section>
-
     <section class="campaign-section" aria-label="Colecciones por descubrir">
       <button class="campaign-card campaign-men" type="button" data-rayon="hombre">
         <img src="assets/products/boss-tux.webp" alt="Colección de moda para hombre" loading="lazy">
@@ -180,6 +181,41 @@
       <div><span class="service-symbol">⌖</span><span><strong>Recogida en Malabo</strong><small>Un contacto, un lugar, un servicio</small></span></div>
       <div><span class="service-symbol">✧</span><span><strong>Grandes marcas</strong><small>Moda, lifestyle y accesorios</small></span></div>
     </section>
+
+    <section class="brand-marquee-band brand-marquee-band-bottom" id="brands-bottom" aria-label="Marcas Ventage Mall">
+  <div class="brand-band-heading">
+    <span class="brand-band-kicker">TU PRÓXIMA MARCA FAVORITA TE ESPERA</span>
+    <span class="brand-band-sub">Explora las colecciones de Ventage Mall.</span>
+  </div>
+  <div class="brand-marquee" role="group" aria-label="Marcas disponibles. Pasa el cursor para detener el movimiento.">
+    <div class="brand-strip-track">
+      <div class="brand-strip">
+        <button class="brand-logo brand-logo--calvin-klein" type="button" data-brand="Calvin Klein" aria-label="Ver productos Calvin Klein"><span class="brand-wordmark" aria-hidden="true">CALVIN KLEIN</span></button>
+        <button class="brand-logo brand-logo--boss" type="button" data-brand="BOSS" aria-label="Ver productos BOSS"><span class="brand-wordmark" aria-hidden="true">BOSS</span></button>
+        <button class="brand-logo brand-logo--ea7" type="button" data-brand="EA7" aria-label="Ver productos EA7"><span class="brand-wordmark" aria-hidden="true">EA7</span></button>
+        <button class="brand-logo brand-logo--love-moschino" type="button" data-brand="Love Moschino" aria-label="Ver productos Love Moschino"><span class="brand-wordmark" aria-hidden="true">LOVE MOSCHINO</span></button>
+        <button class="brand-logo brand-logo--aldo" type="button" data-brand="ALDO" aria-label="Ver productos ALDO"><span class="brand-wordmark" aria-hidden="true">ALDO</span></button>
+        <button class="brand-logo brand-logo--jack-jones" type="button" data-brand="Jack &amp; Jones" aria-label="Ver productos Jack &amp; Jones"><span class="brand-wordmark" aria-hidden="true">JACK &amp; JONES</span></button>
+        <button class="brand-logo brand-logo--fossil" type="button" data-brand="Fossil" aria-label="Ver productos Fossil"><span class="brand-wordmark" aria-hidden="true">FOSSIL</span></button>
+        <button class="brand-logo brand-logo--only" type="button" data-brand="ONLY" aria-label="Ver productos ONLY"><span class="brand-wordmark" aria-hidden="true">ONLY</span></button>
+        <button class="brand-logo brand-logo--liu-jo" type="button" data-brand="LIU JO" aria-label="Ver productos LIU JO"><span class="brand-wordmark" aria-hidden="true">LIU JO</span></button>
+        <button class="brand-logo brand-logo--tous" type="button" data-brand="TOUS" aria-label="Ver productos TOUS"><span class="brand-wordmark" aria-hidden="true">TOUS</span></button>
+      </div>
+      <div class="brand-strip brand-strip-clone" aria-hidden="true">
+        <span class="brand-logo brand-logo--calvin-klein" aria-hidden="true"><span class="brand-wordmark">CALVIN KLEIN</span></span>
+        <span class="brand-logo brand-logo--boss" aria-hidden="true"><span class="brand-wordmark">BOSS</span></span>
+        <span class="brand-logo brand-logo--ea7" aria-hidden="true"><span class="brand-wordmark">EA7</span></span>
+        <span class="brand-logo brand-logo--love-moschino" aria-hidden="true"><span class="brand-wordmark">LOVE MOSCHINO</span></span>
+        <span class="brand-logo brand-logo--aldo" aria-hidden="true"><span class="brand-wordmark">ALDO</span></span>
+        <span class="brand-logo brand-logo--jack-jones" aria-hidden="true"><span class="brand-wordmark">JACK &amp; JONES</span></span>
+        <span class="brand-logo brand-logo--fossil" aria-hidden="true"><span class="brand-wordmark">FOSSIL</span></span>
+        <span class="brand-logo brand-logo--only" aria-hidden="true"><span class="brand-wordmark">ONLY</span></span>
+        <span class="brand-logo brand-logo--liu-jo" aria-hidden="true"><span class="brand-wordmark">LIU JO</span></span>
+        <span class="brand-logo brand-logo--tous" aria-hidden="true"><span class="brand-wordmark">TOUS</span></span>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 </div>
 

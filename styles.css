@@ -1739,3 +1739,421 @@ html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
   }
   .mobile-bottom-nav small { white-space:nowrap; }
 }
+
+
+/* =====================================================================
+   VENTAGE SIGNATURE MOTION — brand marquees + hero spotlight
+   ===================================================================== */
+
+/* Two identical brand ribbons: one near the top, one before the footer. */
+.brand-marquee-band {
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  padding:17px 0 20px;
+  background:linear-gradient(180deg,#f8fafd 0%,#eef3f9 100%);
+  border-top:1px solid #e8edf4;
+  border-bottom:1px solid #e1e8f1;
+}
+.brand-marquee-band-top {
+  padding-top:13px;
+  padding-bottom:14px;
+  background:linear-gradient(105deg,#f4f7fb 0%,#fff 48%,#edf3fa 100%);
+}
+.brand-marquee-band-bottom {
+  margin-top:34px;
+  background:linear-gradient(105deg,#edf2f8 0%,#fff 48%,#eaf0f8 100%);
+}
+.brand-band-heading {
+  max-width:1440px;
+  margin:0 auto 10px;
+  padding:0 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.brand-band-kicker {
+  color:#17365d;
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.18em;
+}
+.brand-band-sub {
+  color:#7a899d;
+  font-size:11px;
+}
+.brand-marquee {
+  width:100%;
+  overflow:hidden;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 4%,#000 96%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 4%,#000 96%,transparent 100%);
+}
+.brand-strip-track {
+  display:flex;
+  align-items:center;
+  width:max-content;
+  will-change:transform;
+  animation:ventage-brand-scroll 48s linear infinite;
+}
+.brand-strip-track:hover,
+.brand-strip-track:focus-within,
+.brand-strip-track:active {
+  animation-play-state:paused;
+}
+.brand-marquee .brand-strip {
+  display:flex;
+  flex:0 0 auto;
+  align-items:center;
+  gap:10px;
+  width:max-content;
+  min-width:0;
+  padding:5px 5px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+}
+.brand-logo {
+  --brand-logo-color:#1a3558;
+  position:relative;
+  display:flex;
+  flex:0 0 154px;
+  align-items:center;
+  justify-content:center;
+  width:154px;
+  min-height:66px;
+  padding:10px 13px;
+  overflow:hidden;
+  border:1px solid #dce5f0;
+  border-radius:11px;
+  background:linear-gradient(145deg,#fff 0%,#f8fafd 100%);
+  color:var(--brand-logo-color);
+  box-shadow:0 3px 11px rgba(18,43,76,.035);
+  transition:
+    color .24s ease,
+    background .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease,
+    transform .24s ease;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.brand-logo::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.12) 48%,transparent 76%);
+  transform:translateX(-115%);
+  transition:transform .55s ease,opacity .25s ease;
+  pointer-events:none;
+}
+.brand-wordmark {
+  position:relative;
+  z-index:1;
+  display:block;
+  color:inherit;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:17px;
+  font-weight:850;
+  line-height:1;
+  letter-spacing:.055em;
+  text-align:center;
+  white-space:nowrap;
+  transition:color .24s ease, letter-spacing .24s ease, transform .24s ease;
+}
+.brand-logo--calvin-klein .brand-wordmark {
+  font-size:14px;
+  font-weight:750;
+  letter-spacing:.16em;
+}
+.brand-logo--boss .brand-wordmark {
+  font-size:23px;
+  font-weight:950;
+  letter-spacing:.12em;
+}
+.brand-logo--ea7 .brand-wordmark {
+  font-size:25px;
+  font-style:italic;
+  font-weight:950;
+  letter-spacing:-.07em;
+}
+.brand-logo--love-moschino .brand-wordmark {
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.045em;
+}
+.brand-logo--aldo .brand-wordmark {
+  font-size:23px;
+  font-weight:500;
+  letter-spacing:.2em;
+}
+.brand-logo--jack-jones .brand-wordmark {
+  font-size:12px;
+  font-weight:950;
+  letter-spacing:.055em;
+}
+.brand-logo--fossil .brand-wordmark {
+  font-family:Georgia,serif;
+  font-size:20px;
+  font-weight:700;
+  letter-spacing:.11em;
+}
+.brand-logo--only .brand-wordmark {
+  font-size:25px;
+  font-weight:950;
+  letter-spacing:-.075em;
+}
+.brand-logo--liu-jo .brand-wordmark {
+  font-family:Georgia,serif;
+  font-size:21px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.brand-logo--tous .brand-wordmark {
+  font-family:Georgia,serif;
+  font-size:23px;
+  font-weight:750;
+  letter-spacing:.16em;
+}
+.brand-logo:hover,
+.brand-logo:focus-visible {
+  z-index:2;
+  color:#fff;
+  border-color:#3c8cff;
+  background:linear-gradient(140deg,#123866 0%,#0c274b 100%);
+  box-shadow:0 0 0 2px rgba(55,137,255,.14),0 9px 24px rgba(20,91,178,.22);
+  transform:translateY(-3px);
+  outline:0;
+}
+.brand-logo:hover::before,
+.brand-logo:focus-visible::before {
+  opacity:1;
+  transform:translateX(115%);
+}
+.brand-logo:hover .brand-wordmark,
+.brand-logo:focus-visible .brand-wordmark {
+  color:#fff;
+  letter-spacing:.09em;
+  transform:scale(1.035);
+}
+.brand-logo--clone {
+  pointer-events:none;
+  cursor:default;
+}
+.brand-marquee .brand-strip-clone { pointer-events:none; }
+@keyframes ventage-brand-scroll {
+  from { transform:translateX(0); }
+  to { transform:translateX(-50%); }
+}
+
+/* Hero: a radial light follows the pointer, confined to this section. */
+.hero {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-light {
+  position:absolute;
+  z-index:1;
+  inset:0;
+  pointer-events:none;
+  opacity:0;
+  background:
+    radial-gradient(460px circle at var(--hero-spot-x,62%) var(--hero-spot-y,38%),
+      rgba(92,163,255,.32) 0%,
+      rgba(48,111,197,.15) 28%,
+      rgba(21,61,116,.055) 48%,
+      transparent 70%),
+    linear-gradient(118deg,transparent 28%,rgba(255,255,255,.035) 48%,transparent 66%);
+  transition:opacity .38s ease;
+  mix-blend-mode:screen;
+}
+.hero:hover .hero-light,
+.hero:focus-within .hero-light {
+  opacity:1;
+}
+.hero-content { z-index:2; }
+.hero-location { z-index:3; }
+.hero-credit { z-index:2; }
+.hero-kicker {
+  animation:hero-rise-in .7s cubic-bezier(.2,.78,.22,1) .06s both;
+}
+.hero-title {
+  animation:hero-rise-in .85s cubic-bezier(.2,.78,.22,1) .17s both;
+}
+.hero-title-accent {
+  display:inline-block;
+  color:transparent !important;
+  background:linear-gradient(105deg,#f2d89d 0%,#fff2cd 28%,#d8ad5b 49%,#fff0c3 67%,#e4c078 100%);
+  background-size:220% auto;
+  background-clip:text;
+  -webkit-background-clip:text;
+  animation:hero-rise-in .85s cubic-bezier(.2,.78,.22,1) .17s both,hero-gold-sheen 7s ease-in-out 1s infinite;
+  filter:drop-shadow(0 2px 14px rgba(226,190,116,.12));
+}
+.hero-sub {
+  animation:hero-rise-in .75s cubic-bezier(.2,.78,.22,1) .34s both;
+}
+.hero-actions {
+  animation:hero-rise-in .75s cubic-bezier(.2,.78,.22,1) .48s both;
+}
+.hero-cta {
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-cta::after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  top:-40%;
+  bottom:-40%;
+  left:-50%;
+  width:34%;
+  transform:skewX(-22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transition:left .7s ease;
+}
+.hero-cta:hover::after,
+.hero-cta:focus-visible::after { left:130%; }
+.hero-location {
+  animation:hero-location-enter .8s cubic-bezier(.2,.78,.22,1) .55s both;
+}
+@keyframes hero-rise-in {
+  from { opacity:0; transform:translate3d(0,20px,0); filter:blur(5px); }
+  to { opacity:1; transform:translate3d(0,0,0); filter:blur(0); }
+}
+@keyframes hero-location-enter {
+  from { opacity:0; transform:translate3d(0,12px,0) scale(.97); }
+  to { opacity:1; transform:translate3d(0,0,0) scale(1); }
+}
+@keyframes hero-gold-sheen {
+  0%,65%,100% { background-position:100% center; }
+  82% { background-position:0% center; }
+}
+
+/* The -30% offer gets a restrained moving gold reflection. */
+.promo-banner {
+  position:relative;
+  overflow:hidden;
+}
+.promo-banner::after {
+  content:"";
+  position:absolute;
+  z-index:0;
+  top:0;
+  bottom:0;
+  left:-30%;
+  width:16%;
+  transform:skewX(-22deg);
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.10),transparent);
+  animation:promo-band-sweep 8.5s ease-in-out 1.4s infinite;
+}
+.promo-inner { position:relative; z-index:1; }
+.promo-highlight {
+  display:inline-block;
+  color:#fff0bf !important;
+  background:linear-gradient(100deg,#dcb568 0%,#fff2c8 32%,#e7c477 52%,#fff3d0 72%,#d7a84d 100%);
+  background-size:240% auto;
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:none;
+  filter:drop-shadow(0 0 9px rgba(239,203,131,.22));
+  animation:promo-highlight-shine 5.5s ease-in-out infinite, promo-highlight-breathe 4.2s ease-in-out infinite;
+  transform-origin:center;
+}
+.promo-cta {
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;
+}
+.promo-cta:hover,
+.promo-cta:focus-visible {
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(2,12,26,.24),0 0 0 3px rgba(236,205,143,.18);
+  outline:0;
+}
+@keyframes promo-band-sweep {
+  0%,18% { left:-30%; opacity:0; }
+  28% { opacity:1; }
+  54% { left:125%; opacity:0; }
+  100% { left:125%; opacity:0; }
+}
+@keyframes promo-highlight-shine {
+  0%,68%,100% { background-position:100% center; }
+  84% { background-position:0% center; }
+}
+@keyframes promo-highlight-breathe {
+  0%,100% { transform:scale(1); filter:drop-shadow(0 0 7px rgba(239,203,131,.16)); }
+  50% { transform:scale(1.045); filter:drop-shadow(0 0 15px rgba(239,203,131,.34)); }
+}
+
+@media (max-width:1100px) {
+  .brand-logo { flex-basis:138px; width:138px; min-height:62px; }
+}
+@media (max-width:760px) {
+  .brand-marquee-band { padding:12px 0 13px; }
+  .brand-marquee-band-bottom { margin-top:24px; }
+  .brand-band-heading { padding:0 15px; margin-bottom:8px; align-items:flex-start; flex-direction:column; gap:3px; }
+  .brand-band-kicker { font-size:8px; letter-spacing:.15em; }
+  .brand-band-sub { font-size:10px; }
+  .brand-strip-track { animation-duration:40s; }
+  .brand-marquee .brand-strip { gap:7px; padding:4px; }
+  .brand-logo { flex-basis:112px; width:112px; min-height:51px; padding:7px 8px; border-radius:9px; }
+  .brand-wordmark { font-size:13px; }
+  .brand-logo--calvin-klein .brand-wordmark { font-size:10px; }
+  .brand-logo--boss .brand-wordmark { font-size:19px; }
+  .brand-logo--ea7 .brand-wordmark { font-size:21px; }
+  .brand-logo--love-moschino .brand-wordmark { font-size:9px; }
+  .brand-logo--aldo .brand-wordmark { font-size:18px; }
+  .brand-logo--jack-jones .brand-wordmark { font-size:10px; }
+  .brand-logo--fossil .brand-wordmark { font-size:17px; }
+  .brand-logo--only .brand-wordmark { font-size:20px; }
+  .brand-logo--liu-jo .brand-wordmark { font-size:18px; }
+  .brand-logo--tous .brand-wordmark { font-size:19px; }
+  .hero-light { display:none; }
+  .hero-title-accent { animation:hero-rise-in .85s cubic-bezier(.2,.78,.22,1) .17s both; }
+  .promo-highlight { animation:promo-highlight-shine 7s ease-in-out infinite; }
+  .brand-logo:hover { transform:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .brand-strip-track,
+  .hero-kicker,
+  .hero-title,
+  .hero-title-accent,
+  .hero-sub,
+  .hero-actions,
+  .hero-location,
+  .hero-cta::after,
+  .promo-banner::after,
+  .promo-highlight {
+    animation:none !important;
+    transition:none !important;
+    filter:none !important;
+  }
+  .hero-light { display:none !important; }
+  .brand-marquee { overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+  .brand-strip-track { transform:none !important; }
+}
+
+
+/* Match the upper ribbon's full-bleed width at the foot of the catalog. */
+.brand-marquee-band-bottom {
+  width:calc(100% + 60px);
+  margin-left:-30px;
+  margin-right:-30px;
+}
+@media (max-width:760px) {
+  .brand-marquee-band-bottom {
+    width:calc(100% + 26px);
+    margin-left:-13px;
+    margin-right:-13px;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .brand-marquee .brand-strip-clone { display:none !important; }
+}
