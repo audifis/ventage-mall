@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ventage Mall — Malabo · Marcas premium, precios de mall</title>
-<meta name="description" content="Ventage Mall Malabo: ropa, relojes, joyas, gafas, accesorios y maletas de marcas premium. Reserva por WhatsApp y recoge en tienda.">
+<title>Ventage Mall — Malabo | Mode, lifestyle & grandes marques</title>
+<meta name="description" content="Ventage Mall à Malabo : mode, lifestyle, montres, bijoux et accessoires de grandes marques. Explorez les collections et contactez-nous sur WhatsApp.">
 <meta property="og:title" content="Ventage Mall — Malabo">
-<meta property="og:description" content="Marcas premium, precios de mall. Reserva por WhatsApp.">
+<meta property="og:description" content="Le style, sans compromis. Mode, accessoires et grandes marques à Malabo.">
 <meta property="og:image" content="assets/facade.jpg">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,9 +21,11 @@
 
 <!-- ===== TOP BAR ===== -->
 <div class="topbar">
-  <span>Envío y recogida en Malabo</span>
-  <span class="topbar-sep">·</span>
-  <span>Reserva por WhatsApp: <a href="https://wa.me/240222619606" target="_blank" rel="noreferrer">+240 222 619 606</a></span>
+  <div class="topbar-inner">
+    <span><i>✦</i> Malabo, Guinea Ecuatorial</span>
+    <span class="topbar-message">Moda · Lifestyle · Grandes marcas</span>
+    <a href="https://wa.me/240222619606" target="_blank" rel="noreferrer"><i>◉</i> Atención WhatsApp: +240 222 619 606</a>
+  </div>
 </div>
 
 <!-- ===== HEADER ===== -->
@@ -50,39 +52,119 @@
       </button>
     </nav>
   </div>
+  <nav class="main-nav" aria-label="Navegación principal">
+    <div class="main-nav-inner">
+      <button class="nav-home is-active" type="button" data-rayon="todo">⌂ <span>Inicio</span></button>
+      <button type="button" data-rayon="hombre">Hombre</button>
+      <button type="button" data-rayon="mujer">Mujer</button>
+      <button type="button" data-rayon="ninos">Niños</button>
+      <button type="button" data-rayon="relojes">Relojes</button>
+      <button type="button" data-rayon="gafas">Gafas</button>
+      <button type="button" data-rayon="joyas">Joyas</button>
+      <button type="button" data-rayon="accesorios">Accesorios</button>
+      <button type="button" data-rayon="maletas">Maletas</button>
+      <button class="nav-brands" type="button" data-scroll-to="brands">Nuestras marcas <span>⌄</span></button>
+    </div>
+  </nav>
 </header>
 
 <!-- ===== VUE ACCUEIL ===== -->
 <div id="view-home">
   <section class="hero">
-    <img src="assets/facade.jpg" alt="Fachada de Ventage Mall en Malabo" class="hero-img" fetchpriority="high">
-    <div class="hero-overlay">
-      <p class="hero-kicker">Malabo · Guinea Ecuatorial</p>
-      <h1 class="hero-title">Marcas premium,<br>precios de mall.</h1>
-      <p class="hero-sub">Ropa, relojes, joyas, gafas y maletas. Reserva por WhatsApp y recoge en tienda.</p>
+    <img src="https://images.unsplash.com/photo-1758448500717-2e4bcd79108b?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=2200"
+      alt="Galería comercial contemporánea con boutiques y escaleras mecánicas"
+      class="hero-img" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="hero-content">
+      <p class="hero-kicker">VENTAGE MALL <span>·</span> MALABO</p>
+      <h1 class="hero-title">Le style,<br><em>sans compromis.</em></h1>
+      <p class="hero-sub">Mode, accessoires et grandes marques réunis en un seul lieu.</p>
+      <div class="hero-actions">
+        <button class="hero-cta" type="button" data-rayon="todo">Découvrir les collections <span>→</span></button>
+        <button class="hero-link" type="button" data-scroll-to="brands">Explorer les marques</button>
+      </div>
     </div>
+    <div class="hero-location">
+      <img src="assets/facade.jpg" alt="Façade de Ventage Mall à Malabo" loading="lazy">
+      <span><small>NOTRE ADRESSE</small><strong>Ventage Mall · Malabo</strong></span>
+    </div>
+    <div class="hero-credit">Visuel d’ambiance · <a href="https://unsplash.com/photos/modern-shopping-mall-interior-with-escalators-and-shops-hMMbIptXPjI" target="_blank" rel="noreferrer">Aalo Lens / Unsplash</a></div>
   </section>
 
   <section class="promo-banner" id="promoBanner">
     <div class="promo-inner">
-      <span class="promo-badge">−30 %</span>
-      <div class="promo-texts">
-        <strong>Rebajas de temporada</strong>
-        <span id="promoTimer">Hasta el 31 de diciembre</span>
-      </div>
-      <button class="promo-cta" id="promoCta">Ver ofertas</button>
+      <div class="promo-icon">✦</div>
+      <div class="promo-kicker">SÉLECTION DE SAISON</div>
+      <span class="promo-divider"></span>
+      <div class="promo-texts"><span>Jusqu’à</span><strong>−30 %</strong><small id="promoTimer">Jusqu’au 31 décembre</small></div>
+      <span class="promo-note">Sur une sélection d’articles</span>
+      <button class="promo-cta" id="promoCta">En profiter <span>→</span></button>
     </div>
   </section>
 
-  <main class="catalog">
-    <section class="cat-section">
-      <h2 class="section-title">Comprar por categoría</h2>
+  <main class="catalog home-catalog">
+    <section class="cat-section category-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">TROUVEZ VOTRE STYLE</span><h2 class="section-title">Explorer les collections</h2></div>
+        <span class="heading-note">8 univers à découvrir</span>
+      </div>
       <div class="cat-row" id="catRow"></div>
     </section>
 
-    <section class="cat-section">
-      <h2 class="section-title">Destacados</h2>
-      <div class="grid" id="featuredGrid"></div>
+    <section class="cat-section products-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">LES PIÈCES QUI FONT LA DIFFÉRENCE</span><h2 class="section-title">Nos coups de cœur</h2></div>
+        <button class="section-link" type="button" data-rayon="todo">Tout voir <span>→</span></button>
+      </div>
+      <div class="grid product-rail" id="featuredGrid"></div>
+    </section>
+
+    <section class="cat-section products-section new-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">FRAÎCHEMENT SÉLECTIONNÉS</span><h2 class="section-title">À découvrir maintenant</h2></div>
+        <button class="section-link" type="button" data-rayon="todo">Voir la collection <span>→</span></button>
+      </div>
+      <div class="grid product-rail" id="newArrivalsGrid"></div>
+    </section>
+
+    <section class="brand-section" id="brands">
+      <div class="section-heading">
+        <div><span class="eyebrow">LE MEILLEUR DES GRANDES MAISONS</span><h2 class="section-title">Les marques Ventage</h2></div>
+        <span class="heading-note">Une sélection de caractère</span>
+      </div>
+      <div class="brand-strip">
+        <button type="button" data-brand="Calvin Klein">Calvin Klein</button>
+        <button type="button" data-brand="BOSS">BOSS</button>
+        <button type="button" data-brand="EA7">EA7</button>
+        <button type="button" data-brand="Love Moschino">LOVE MOSCHINO</button>
+        <button type="button" data-brand="ALDO">ALDO</button>
+        <button type="button" data-brand="Jack & Jones">JACK &amp; JONES</button>
+        <button type="button" data-brand="Fossil">FOSSIL</button>
+        <button type="button" data-brand="ONLY">ONLY</button>
+        <button type="button" data-brand="LIU JO">LIU JO</button>
+        <button type="button" data-brand="TOUS">TOUS</button>
+      </div>
+    </section>
+
+    <section class="campaign-section" aria-label="Collections à découvrir">
+      <button class="campaign-card campaign-men" type="button" data-rayon="hombre">
+        <img src="assets/products/boss-tux.jpg" alt="Sélection mode homme" loading="lazy">
+        <span class="campaign-overlay"><small>ALLURE &amp; ÉLÉGANCE</small><strong>Mode Homme</strong><em>Découvrir la collection →</em></span>
+      </button>
+      <button class="campaign-card campaign-women" type="button" data-rayon="mujer">
+        <img src="assets/products/diesel-mujer.jpg" alt="Sélection mode femme" loading="lazy">
+        <span class="campaign-overlay"><small>STYLE &amp; RAFFINEMENT</small><strong>Mode Femme</strong><em>Découvrir la collection →</em></span>
+      </button>
+      <button class="campaign-card campaign-kids" type="button" data-rayon="ninos">
+        <img src="assets/products/boss-blazer.jpg" alt="Sélection junior" loading="lazy">
+        <span class="campaign-overlay"><small>LES PETITS DÉTAILS</small><strong>Univers Enfants</strong><em>Découvrir la collection →</em></span>
+      </button>
+    </section>
+
+    <section class="service-strip" aria-label="Services Ventage Mall">
+      <div><span class="service-symbol">↗</span><span><strong>Réservation simple</strong><small>Directement sur WhatsApp</small></span></div>
+      <div><span class="service-symbol">⌖</span><span><strong>Retrait à Malabo</strong><small>Un contact, un lieu, un service</small></span></div>
+      <div><span class="service-symbol">✧</span><span><strong>Grandes marques</strong><small>Mode, lifestyle et accessoires</small></span></div>
     </section>
   </main>
 </div>
@@ -165,23 +247,21 @@
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <img src="assets/logo.jpg" alt="Ventage Group" class="footer-logo">
-      
+  <div class="footer-main">
+    <div class="footer-brand">
+      <img src="assets/logo.jpg" alt="Ventage Mall" class="footer-logo">
+      <p>Plus qu’un mall,<br><strong>une expérience.</strong></p>
     </div>
-    <div>
-      <h4>Contacto</h4>
-      <p>WhatsApp: <a href="https://wa.me/240222619606" target="_blank" rel="noreferrer">+240 222 619 606</a></p>
-      <p>Malabo, Guinea Ecuatorial</p>
-    </div>
-    <div>
-      <h4>Horario</h4>
-      <p>Lunes – Sábado</p>
-      <p>10:00 – 20:00</p>
+    <div class="footer-col"><h4>Explorer</h4><a href="#" data-home-link>Accueil</a><a href="#brands" data-scroll-to="brands">Nos marques</a><a href="#" data-rayon="hombre">Mode Homme</a><a href="#" data-rayon="mujer">Mode Femme</a></div>
+    <div class="footer-col"><h4>Nos univers</h4><a href="#" data-rayon="ninos">Enfants</a><a href="#" data-rayon="relojes">Montres</a><a href="#" data-rayon="joyas">Bijoux</a><a href="#" data-rayon="accesorios">Accessoires</a></div>
+    <div class="footer-col"><h4>Service client</h4><a href="https://wa.me/240222619606" target="_blank" rel="noreferrer">WhatsApp : +240 222 619 606</a><span>Malabo, Guinée équatoriale</span><span>Lundi – Samedi · 10h – 20h</span></div>
+    <div class="footer-contact">
+      <span class="eyebrow">UNE QUESTION ?</span>
+      <strong>Nous sommes à votre écoute.</strong>
+      <a href="https://wa.me/240222619606" target="_blank" rel="noreferrer" class="footer-wa">◉ Contacter Ventage</a>
     </div>
   </div>
-  <p class="footer-copy">© 2026 Ventage Mall</p>
+  <div class="footer-bottom"><span>© 2026 Ventage Mall. Tous droits réservés.</span><span>Malabo · Guinée équatoriale</span><a href="#header">Retour en haut ↑</a></div>
 </footer>
 
 <!-- ===== FICHE PRODUIT (sheet) ===== -->
