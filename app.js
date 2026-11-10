@@ -277,10 +277,20 @@ function renderHome() {
     catRow.appendChild(card);
   });
 
-  const feat = PRODUCTS.slice().sort((a,b) => (b.promo - a.promo)).slice(0, 8);
+  const feat = PRODUCTS.slice().sort((a,b) => (b.promo - a.promo) || (a.price - b.price)).slice(0, 12);
   const featGrid = $("featuredGrid");
   featGrid.innerHTML = "";
   feat.forEach((p, i) => featGrid.appendChild(makeCard(p, i < 4)));
+
+  const brandOrder = ["Calvin Klein", "BOSS", "EA7", "Love Moschino", "ALDO", "Jack & Jones", "Fossil", "ONLY", "LIU JO", "TOUS"];
+  const fresh = brandOrder
+    .map(brand => PRODUCTS.slice().reverse().find(p => p.brand === brand))
+    .filter(Boolean);
+  const freshGrid = $("newArrivalsGrid");
+  if (freshGrid) {
+    freshGrid.innerHTML = "";
+    fresh.forEach((p, i) => freshGrid.appendChild(makeCard(p, i < 3)));
+  }
 }
 
 /* ---------- Navigation vues ---------- */
@@ -391,7 +401,7 @@ function waLink(text) {
 
 function reserveText(p, qty, tallaSel) {
   return "Hola Ventage Mall, quiero reservar: " + p.name + " (" + p.brand +
-    "), talla " + tallaSel + ", cantidad " + qty + ", precio demo " + p.price + " XAF.";
+    "), talla " + tallaSel + ", cantidad " + qty + ", precio " + p.price + " XAF.";
 }
 
 /* ---------- Cesta ---------- */
@@ -636,6 +646,32 @@ $("fOnlyPromo").onchange = (e) => { onlyPromo = e.target.checked; renderAll(); }
 $("logoLink").onclick = (e) => { e.preventDefault(); goHome(); };
 $("crumbHome").onclick = (e) => { e.preventDefault(); goHome(); };
 $("promoCta").onclick = () => goRayon("promo");
+document.querySelectorAll("[data-rayon]").forEach(button => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const rayon = button.dataset.rayon || "todo";
+    goRayon(rayon);
+  });
+});
+document.querySelectorAll("[data-brand]").forEach(button => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    goRayon("todo");
+    marca = button.dataset.brand;
+    renderAll();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+document.querySelectorAll("[data-scroll-to]").forEach(button => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    const target = document.getElementById(button.dataset.scrollTo);
+    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+document.querySelectorAll("[data-home-link]").forEach(link => {
+  link.addEventListener("click", (event) => { event.preventDefault(); goHome(); });
+});
 $("filtersToggle").onclick = openFiltersMobile;
 $("filtersClose").onclick = closeDrawers;
 $("filtersOverlay").onclick = closeDrawers;
