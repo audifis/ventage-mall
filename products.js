@@ -6,7 +6,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 42000,
   "promo": false,
-  "image": "assets/products/tommy-polo.jpg"
+  "image": "assets/products/tommy-polo.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "tommy-navy",
@@ -15,7 +21,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/tommy-navy.jpg"
+  "image": "assets/products/tommy-navy.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "tommy-red",
@@ -24,7 +36,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 39000,
   "promo": true,
-  "image": "assets/products/tommy-red.jpg"
+  "image": "assets/products/tommy-red.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "tommy-shoe",
@@ -33,7 +51,14 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 85000,
   "promo": false,
-  "image": "assets/products/tommy-shoe.jpg"
+  "image": "assets/products/tommy-shoe.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "boss-shirt",
@@ -42,7 +67,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 68000,
   "promo": false,
-  "image": "assets/products/boss-shirt.jpg"
+  "image": "assets/products/boss-shirt.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "boss-blazer",
@@ -51,7 +82,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 145000,
   "promo": true,
-  "image": "assets/products/boss-blazer.jpg"
+  "image": "assets/products/boss-blazer.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "boss-tux",
@@ -60,7 +97,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 220000,
   "promo": false,
-  "image": "assets/products/boss-tux.jpg"
+  "image": "assets/products/boss-tux.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "boss-suit",
@@ -69,7 +112,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 185000,
   "promo": false,
-  "image": "assets/products/boss-suit.jpg"
+  "image": "assets/products/boss-suit.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "boss-sun",
@@ -78,7 +127,10 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 78000,
   "promo": false,
-  "image": "assets/products/boss-sun.jpg"
+  "image": "assets/products/boss-sun.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "diesel-jeans",
@@ -87,7 +139,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 79000,
   "promo": false,
-  "image": "assets/products/diesel-jeans.jpg"
+  "image": "assets/products/diesel-jeans.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "diesel-jacket",
@@ -96,7 +154,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 98000,
   "promo": true,
-  "image": "assets/products/diesel-jacket.jpg"
+  "image": "assets/products/diesel-jacket.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "diesel-look",
@@ -105,7 +169,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 120000,
   "promo": false,
-  "image": "assets/products/diesel-look.jpg"
+  "image": "assets/products/diesel-look.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "diesel-mujer",
@@ -114,7 +184,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 88000,
   "promo": false,
-  "image": "assets/products/diesel-mujer.jpg"
+  "image": "assets/products/diesel-mujer.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "jj-jeans",
@@ -123,7 +199,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 52000,
   "promo": false,
-  "image": "assets/products/jj-jeans.jpg"
+  "image": "assets/products/jj-jeans.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "jj-shirt",
@@ -132,7 +214,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 48000,
   "promo": true,
-  "image": "assets/products/jj-shirt.jpg"
+  "image": "assets/products/jj-shirt.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "jj-light",
@@ -141,7 +229,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 54000,
   "promo": false,
-  "image": "assets/products/jj-light.jpg"
+  "image": "assets/products/jj-light.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "jj-tee",
@@ -150,7 +244,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 28000,
   "promo": false,
-  "image": "assets/products/jj-tee.jpg"
+  "image": "assets/products/jj-tee.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "jj-oxford",
@@ -159,7 +259,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 46000,
   "promo": false,
-  "image": "assets/products/jj-oxford.jpg"
+  "image": "assets/products/jj-oxford.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ck-tee",
@@ -168,7 +274,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 32000,
   "promo": false,
-  "image": "assets/products/ck-tee.jpg"
+  "image": "assets/products/ck-tee.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ck-teal",
@@ -177,7 +289,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 38000,
   "promo": false,
-  "image": "assets/products/ck-teal.jpg"
+  "image": "assets/products/ck-teal.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ck-black",
@@ -186,7 +304,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 42000,
   "promo": true,
-  "image": "assets/products/ck-black.jpg"
+  "image": "assets/products/ck-black.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ck-zip",
@@ -195,7 +319,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 48000,
   "promo": false,
-  "image": "assets/products/ck-zip.jpg"
+  "image": "assets/products/ck-zip.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ea7-suit",
@@ -204,7 +334,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 95000,
   "promo": true,
-  "image": "assets/products/ea7-suit.jpg"
+  "image": "assets/products/ea7-suit.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ea7-mujer",
@@ -213,7 +349,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/ea7-mujer.jpg"
+  "image": "assets/products/ea7-mujer.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ea7-polo",
@@ -222,7 +364,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 55000,
   "promo": false,
-  "image": "assets/products/ea7-polo.jpg"
+  "image": "assets/products/ea7-polo.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "ea7-zip",
@@ -231,7 +379,13 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/ea7-zip.jpg"
+  "image": "assets/products/ea7-zip.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "aldo-sneaker",
@@ -240,7 +394,14 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 75000,
   "promo": false,
-  "image": "assets/products/aldo-sneaker.jpg"
+  "image": "assets/products/aldo-sneaker.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "aldo-loafer",
@@ -249,7 +410,14 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 72000,
   "promo": false,
-  "image": "assets/products/aldo-loafer.jpg"
+  "image": "assets/products/aldo-loafer.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "aldo-cognac",
@@ -258,7 +426,14 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 78000,
   "promo": true,
-  "image": "assets/products/aldo-cognac.jpg"
+  "image": "assets/products/aldo-cognac.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "guess-bag",
@@ -267,7 +442,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 115000,
   "promo": true,
-  "image": "assets/products/guess-bag.jpg"
+  "image": "assets/products/guess-bag.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "guess-grey",
@@ -276,7 +457,14 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/guess-grey.jpg"
+  "image": "assets/products/guess-grey.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "guess-platform",
@@ -285,7 +473,14 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 95000,
   "promo": false,
-  "image": "assets/products/guess-platform.jpg"
+  "image": "assets/products/guess-platform.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "guess-white",
@@ -294,7 +489,14 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/guess-white.jpg"
+  "image": "assets/products/guess-white.jpg",
+  "sizes": [
+   "40",
+   "41",
+   "42",
+   "43",
+   "44"
+  ]
  },
  {
   "id": "guess-sun",
@@ -303,7 +505,10 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 72000,
   "promo": false,
-  "image": "assets/products/guess-sun.jpg"
+  "image": "assets/products/guess-sun.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "moschino-bag",
@@ -312,7 +517,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 98000,
   "promo": true,
-  "image": "assets/products/moschino-bag.jpg"
+  "image": "assets/products/moschino-bag.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "mosc-heart",
@@ -321,7 +532,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/mosc-heart.jpg"
+  "image": "assets/products/mosc-heart.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "mosc-chain",
@@ -330,7 +547,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 94000,
   "promo": false,
-  "image": "assets/products/mosc-chain.jpg"
+  "image": "assets/products/mosc-chain.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "mosc-pink",
@@ -339,7 +562,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 86000,
   "promo": false,
-  "image": "assets/products/mosc-pink.jpg"
+  "image": "assets/products/mosc-pink.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "mosc-shoulder",
@@ -348,7 +577,13 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/mosc-shoulder.jpg"
+  "image": "assets/products/mosc-shoulder.jpg",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL"
+  ]
  },
  {
   "id": "festina-chrono",
@@ -357,7 +592,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 145000,
   "promo": false,
-  "image": "assets/products/festina-chrono.jpg"
+  "image": "assets/products/festina-chrono.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fest-green",
@@ -366,7 +604,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 155000,
   "promo": true,
-  "image": "assets/products/fest-green.jpg"
+  "image": "assets/products/fest-green.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fest-white",
@@ -375,7 +616,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 168000,
   "promo": false,
-  "image": "assets/products/fest-white.jpg"
+  "image": "assets/products/fest-white.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fest-black",
@@ -384,7 +628,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 168000,
   "promo": false,
-  "image": "assets/products/fest-black.jpg"
+  "image": "assets/products/fest-black.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fest-gold",
@@ -393,7 +640,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 175000,
   "promo": false,
-  "image": "assets/products/fest-gold.jpg"
+  "image": "assets/products/fest-gold.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fest-classic",
@@ -402,7 +652,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 132000,
   "promo": false,
-  "image": "assets/products/fest-classic.jpg"
+  "image": "assets/products/fest-classic.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fossil-blue",
@@ -411,7 +664,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/fossil-blue.jpg"
+  "image": "assets/products/fossil-blue.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fossil-grey",
@@ -420,7 +676,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 95000,
   "promo": true,
-  "image": "assets/products/fossil-grey.jpg"
+  "image": "assets/products/fossil-grey.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "fossil-black",
@@ -429,7 +688,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 98000,
   "promo": false,
-  "image": "assets/products/fossil-black.jpg"
+  "image": "assets/products/fossil-black.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "mk-chain",
@@ -438,7 +700,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 185000,
   "promo": false,
-  "image": "assets/products/mk-chain.jpg"
+  "image": "assets/products/mk-chain.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "mk-ritz",
@@ -447,7 +712,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 210000,
   "promo": false,
-  "image": "assets/products/mk-ritz.jpg"
+  "image": "assets/products/mk-ritz.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "mk-gold",
@@ -456,7 +724,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 195000,
   "promo": true,
-  "image": "assets/products/mk-gold.jpg"
+  "image": "assets/products/mk-gold.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "mk-link",
@@ -465,7 +736,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/mk-link.jpg"
+  "image": "assets/products/mk-link.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "mk-case",
@@ -474,7 +748,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 188000,
   "promo": false,
-  "image": "assets/products/mk-case.jpg"
+  "image": "assets/products/mk-case.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "lambo",
@@ -483,7 +760,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 245000,
   "promo": true,
-  "image": "assets/products/lambo.jpg"
+  "image": "assets/products/lambo.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "gant",
@@ -492,7 +772,10 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 125000,
   "promo": true,
-  "image": "assets/products/gant.jpg"
+  "image": "assets/products/gant.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "tous-bear",
@@ -501,7 +784,10 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 72000,
   "promo": true,
-  "image": "assets/products/tous-bear.jpg"
+  "image": "assets/products/tous-bear.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "majorica-pearls",
@@ -510,7 +796,10 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 86000,
   "promo": true,
-  "image": "assets/products/majorica-pearls.jpg"
+  "image": "assets/products/majorica-pearls.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "maj-white",
@@ -519,7 +808,10 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/maj-white.jpg"
+  "image": "assets/products/maj-white.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "maj-pendant",
@@ -528,7 +820,10 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 64000,
   "promo": false,
-  "image": "assets/products/maj-pendant.jpg"
+  "image": "assets/products/maj-pendant.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "police-sun",
@@ -537,7 +832,10 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 65000,
   "promo": false,
-  "image": "assets/products/police-sun.jpg"
+  "image": "assets/products/police-sun.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "pol-shield",
@@ -546,7 +844,10 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 68000,
   "promo": true,
-  "image": "assets/products/pol-shield.jpg"
+  "image": "assets/products/pol-shield.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "pol-aviator",
@@ -555,7 +856,10 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 62000,
   "promo": false,
-  "image": "assets/products/pol-aviator.jpg"
+  "image": "assets/products/pol-aviator.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "samsonite-carry",
@@ -564,7 +868,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 165000,
   "promo": false,
-  "image": "assets/products/samsonite-carry.jpg"
+  "image": "assets/products/samsonite-carry.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "samsonite-winfield",
@@ -573,7 +880,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 189000,
   "promo": false,
-  "image": "assets/products/samsonite-winfield.jpg"
+  "image": "assets/products/samsonite-winfield.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "sam-plum",
@@ -582,7 +892,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 175000,
   "promo": true,
-  "image": "assets/products/sam-plum.jpg"
+  "image": "assets/products/sam-plum.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "sam-red",
@@ -591,7 +904,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-red.jpg"
+  "image": "assets/products/sam-red.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "sam-black",
@@ -600,7 +916,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-black.jpg"
+  "image": "assets/products/sam-black.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "sam-blue",
@@ -609,7 +928,10 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-blue.jpg"
+  "image": "assets/products/sam-blue.jpg",
+  "sizes": [
+   "Única"
+  ]
  },
  {
   "id": "sam-soft",
@@ -618,6 +940,9 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/sam-soft.jpg"
+  "image": "assets/products/sam-soft.jpg",
+  "sizes": [
+   "Única"
+  ]
  }
 ];

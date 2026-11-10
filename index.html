@@ -3,15 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ventage Mall — Moda premium en Malabo | Tommy Hilfiger, Boss, Michael Kors</title>
-<meta name="description" content="Ventage Mall Malabo: ropa, relojes, joyas, gafas y maletas de marcas premium. Precios en XAF. Reserva por WhatsApp y recoge en tienda.">
+<title>Ventage Mall — Malabo · Marcas premium, precios de mall</title>
+<meta name="description" content="Ventage Mall Malabo: ropa, relojes, joyas, gafas y maletas de marcas premium. Precios de demostración en XAF. Reserva por WhatsApp y recoge en tienda.">
 <meta property="og:title" content="Ventage Mall — Malabo">
-<meta property="og:description" content="Marcas premium al mejor precio en Malabo. Reserva por WhatsApp.">
+<meta property="og:description" content="Marcas premium, precios de mall. Reserva por WhatsApp.">
 <meta property="og:image" content="assets/facade.jpg">
 <link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Store","name":"Ventage Mall","address":{"@type":"PostalAddress","addressLocality":"Malabo","addressCountry":"GQ"},"telephone":"+240 222 619 606"}
+{"@context":"https://schema.org","@type":"Store","name":"Ventage Mall","address":{"@type":"PostalAddress","addressLocality":"Malabo","addressCountry":"GQ"},"telephone":"+240 222 619 606","openingHours":"Mo-Sa 10:00-20:00"}
 </script>
 </head>
 <body>
@@ -32,7 +35,7 @@
 
     <div class="search-wrap">
       <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input id="q" type="search" placeholder="Buscar marca, artículo… (ej. reloj Michael Kors)" autocomplete="off" enterkeyhint="search">
+      <input id="q" type="search" placeholder="Buscar marca, artículo…" autocomplete="off" enterkeyhint="search">
       <button id="clearQ" class="clear-q" aria-label="Limpiar búsqueda" hidden>&times;</button>
     </div>
 
@@ -49,63 +52,123 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="heroSection">
-  <img src="assets/facade.jpg" alt="Fachada de Ventage Mall en Malabo" class="hero-img">
-  <div class="hero-overlay">
-    <p class="hero-kicker">Malabo · Guinea Ecuatorial</p>
-    <h1 class="hero-title">Marcas premium,<br>precios de mall.</h1>
-    <p class="hero-sub">Ropa, relojes, joyas, gafas y maletas. Reserva por WhatsApp y recoge en tienda.</p>
-    <a href="#catalogo" class="hero-cta">Ver catálogo</a>
-  </div>
-</section>
-
-<!-- ===== PROMO BANNER ===== -->
-<section class="promo-banner" id="promoBanner">
-  <div class="promo-inner">
-    <span class="promo-badge">−30%</span>
-    <div class="promo-texts">
-      <strong>Rebajas de temporada</strong>
-      <span id="promoTimer">Hasta el 31 de diciembre</span>
+<!-- ===== VUE ACCUEIL ===== -->
+<div id="view-home">
+  <section class="hero">
+    <img src="assets/facade.jpg" alt="Fachada de Ventage Mall en Malabo" class="hero-img" fetchpriority="high">
+    <div class="hero-overlay">
+      <p class="hero-kicker">Malabo · Guinea Ecuatorial</p>
+      <h1 class="hero-title">Marcas premium,<br>precios de mall.</h1>
+      <p class="hero-sub">Ropa, relojes, joyas, gafas y maletas. Reserva por WhatsApp y recoge en tienda.</p>
     </div>
-    <button class="promo-cta" id="promoCta">Ver ofertas</button>
-  </div>
-</section>
+  </section>
 
-<!-- ===== CATALOG ===== -->
-<main class="catalog" id="catalogo">
-  <!-- Filters -->
-  <div class="filters" id="filters">
-    <div class="chips-row" id="rayons" role="tablist" aria-label="Categorías"></div>
-    <div class="chips-row chips-brands" id="brands" aria-label="Marcas"></div>
-    <div class="filters-bar">
-      <span class="count" id="count"></span>
-      <div class="select-wrap">
-        <select id="sort" aria-label="Ordenar">
-          <option value="featured">Destacados</option>
-          <option value="price-asc">Precio: menor a mayor</option>
-          <option value="price-desc">Precio: mayor a menor</option>
-          <option value="promo">Ofertas primero</option>
-          <option value="brand">Marca A–Z</option>
-        </select>
+  <section class="promo-banner" id="promoBanner">
+    <div class="promo-inner">
+      <span class="promo-badge">−30 %</span>
+      <div class="promo-texts">
+        <strong>Rebajas de temporada</strong>
+        <span id="promoTimer">Hasta el 31 de diciembre</span>
+      </div>
+      <button class="promo-cta" id="promoCta">Ver ofertas</button>
+    </div>
+  </section>
+
+  <main class="catalog">
+    <section class="cat-section">
+      <h2 class="section-title">Comprar por categoría</h2>
+      <div class="cat-row" id="catRow"></div>
+    </section>
+
+    <section class="cat-section">
+      <h2 class="section-title">Destacados</h2>
+      <div class="grid" id="featuredGrid"></div>
+    </section>
+  </main>
+</div>
+
+<!-- ===== VUE RAYON (page catégorie) ===== -->
+<div id="view-rayon" hidden>
+  <main class="catalog rayon-page">
+    <nav class="breadcrumb" aria-label="Migas de pan">
+      <a href="#" id="crumbHome">Inicio</a>
+      <span class="crumb-sep">/</span>
+      <span id="crumbRayon" class="crumb-current"></span>
+    </nav>
+
+    <div class="rayon-head">
+      <h1 id="rayonTitle"></h1>
+      <p class="rayon-count" id="rayonCount"></p>
+    </div>
+
+    <div class="rayon-layout">
+      <!-- Sidebar filtres desktop -->
+      <aside class="filters-col" id="filtersCol">
+        <div class="filter-block">
+          <h4>Categoría</h4>
+          <div id="fRayons"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Marca</h4>
+          <div id="fBrands"></div>
+        </div>
+        <div class="filter-block">
+          <h4>Precio (XAF)</h4>
+          <div class="price-range">
+            <input type="number" id="fPriceMin" placeholder="Mín" min="0" step="1000">
+            <span>—</span>
+            <input type="number" id="fPriceMax" placeholder="Máx" min="0" step="1000">
+          </div>
+        </div>
+        <div class="filter-block">
+          <label class="check-row">
+            <input type="checkbox" id="fOnlyPromo">
+            <span>Solo ofertas</span>
+          </label>
+        </div>
+        <div class="filter-block" id="fSizesBlock" hidden>
+          <h4>Talla</h4>
+          <div id="fSizes"></div>
+        </div>
+        <button class="btn-clear-filters" id="fClear">Limpiar</button>
+      </aside>
+
+      <!-- Grille + barre -->
+      <div class="rayon-main">
+        <div class="toolbar">
+          <span class="count" id="gridCount"></span>
+          <div class="toolbar-right">
+            <button class="filters-toggle" id="filtersToggle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+              Filtros
+            </button>
+            <div class="select-wrap">
+              <select id="sort" aria-label="Ordenar">
+                <option value="featured">Destacados</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+                <option value="promo">Ofertas primero</option>
+                <option value="brand">Marca A–Z</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+          <p>No encontramos artículos con esos filtros.</p>
+          <button class="btn-link" id="resetFilters">Limpiar filtros</button>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Grid -->
-  <div class="grid" id="grid"></div>
-  <div class="empty" id="empty" hidden>
-    <p>No encontramos artículos con esa búsqueda.</p>
-    <button class="btn-link" id="resetFilters">Limpiar filtros</button>
-  </div>
-</main>
+  </main>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer-grid">
     <div>
       <img src="assets/logo.jpg" alt="Ventage Group" class="footer-logo">
-      <p class="footer-note">Precios de demostración en XAF. Se confirma en tienda, con la talla, antes de apartar la pieza.</p>
+      <p class="footer-note">Precio de demostración en XAF. Se confirma en tienda, con la talla, antes de apartar la pieza.</p>
     </div>
     <div>
       <h4>Contacto</h4>
@@ -121,14 +184,14 @@
   <p class="footer-copy">© 2026 Ventage Mall</p>
 </footer>
 
-<!-- ===== PRODUCT SHEET (modal) ===== -->
+<!-- ===== FICHE PRODUIT (sheet) ===== -->
 <div class="sheet-overlay" id="sheetOverlay" hidden></div>
 <aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Ficha de producto" hidden>
   <button class="sheet-close" id="sheetClose" aria-label="Cerrar">&times;</button>
   <div class="sheet-body">
     <div class="sheet-gallery">
-      <img id="simg" alt="">
-      <span class="sheet-badge" id="sbadge" hidden>−30%</span>
+      <img id="simg" alt="" width="600" height="800">
+      <span class="sheet-badge" id="sbadge" hidden>−30 %</span>
     </div>
     <div class="sheet-info">
       <p class="sheet-brand" id="sbrand"></p>
@@ -138,6 +201,11 @@
         <span class="sheet-was" id="swas" hidden></span>
       </div>
       <p class="sheet-note">Precio de demostración en XAF. Se confirma en tienda, con la talla, antes de apartar la pieza.</p>
+
+      <div class="sheet-sizes" id="sizesBlock">
+        <span class="sizes-label">Talla <em>(se confirma en tienda)</em></span>
+        <div class="sizes-row" id="sizesRow"></div>
+      </div>
 
       <div class="sheet-qty">
         <span>Cantidad</span>
@@ -167,7 +235,7 @@
   </div>
 </aside>
 
-<!-- ===== CART DRAWER ===== -->
+<!-- ===== CESTA (drawer) ===== -->
 <div class="drawer-overlay" id="cartOverlay" hidden></div>
 <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Cesta" hidden>
   <div class="drawer-head">
@@ -184,11 +252,11 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
       Reservar todo por WhatsApp
     </button>
-    <p class="drawer-note">Te confirmamos disponibilidad y talla en tienda antes de apartar.</p>
+    <p class="drawer-note">Precio de demostración en XAF. Se confirma en tienda, con la talla, antes de apartar la pieza.</p>
   </div>
 </aside>
 
-<!-- ===== WISHLIST DRAWER ===== -->
+<!-- ===== FAVORITOS (drawer) ===== -->
 <div class="drawer-overlay" id="wishOverlay" hidden></div>
 <aside class="drawer" id="wishDrawer" role="dialog" aria-modal="true" aria-label="Favoritos" hidden>
   <div class="drawer-head">
@@ -196,6 +264,16 @@
     <button class="drawer-close" id="wishClose" aria-label="Cerrar">&times;</button>
   </div>
   <div class="drawer-body" id="wishItems"></div>
+</aside>
+
+<!-- ===== PANNEAU FILTRES MOBILE ===== -->
+<div class="drawer-overlay" id="filtersOverlay" hidden></div>
+<aside class="drawer filters-drawer" id="filtersDrawer" role="dialog" aria-modal="true" aria-label="Filtros" hidden>
+  <div class="drawer-head">
+    <h2>Filtros</h2>
+    <button class="drawer-close" id="filtersClose" aria-label="Cerrar">&times;</button>
+  </div>
+  <div class="drawer-body" id="filtersMobileContent"></div>
 </aside>
 
 <!-- ===== TOAST ===== -->
