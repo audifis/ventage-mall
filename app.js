@@ -298,11 +298,13 @@ function goHome() {
   currentView = "home";
   $("view-home").hidden = false;
   $("view-rayon").hidden = true;
+  document.querySelector(".nav-home")?.classList.add("is-active");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function goRayon(rayon) {
   currentView = "rayon";
+  document.querySelector(".nav-home")?.classList.remove("is-active");
   currentRayon = rayon;
   marca = ""; talla = ""; priceMin = ""; priceMax = ""; onlyPromo = false;
   $("fPriceMin").value = ""; $("fPriceMax").value = ""; $("fOnlyPromo").checked = false;
