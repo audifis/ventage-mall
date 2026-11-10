@@ -486,7 +486,7 @@ function cartWhatsAppText() {
       " x" + item.qty + " = " + fmt(p.price * item.qty);
   }).filter(Boolean);
   return "Hola Ventage Mall, quiero reservar:\n" + lines.join("\n") +
-    "\nTotal estimado: " + fmt(cartTotal()) + "\nGracias.";
+    "\nTotal de la cesta: " + fmt(cartTotal()) + "\nGracias.";
 }
 
 /* ---------- Favoritos ---------- */
