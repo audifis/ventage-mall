@@ -805,3 +805,59 @@ a { text-decoration: none; }
   .btn-wish { width: 100%; border-radius: 4px; }
   .similar-row { grid-template-columns: repeat(2, 1fr); }
 }
+
+
+/* ---------- Fiche produit : image compacte et détails visibles ---------- */
+@media (min-width: 641px) {
+  .sheet { width: min(780px, 100%); }
+  .sheet-body {
+    display: grid;
+    grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
+    align-items: start;
+    min-height: 100%;
+  }
+  .sheet-gallery {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 16px 24px;
+    background: #f7f7f7;
+  }
+  .sheet-gallery img {
+    width: 100%;
+    max-width: 260px;
+    max-height: min(58vh, 480px);
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
+  }
+  .sheet-info { min-width: 0; padding: 64px 26px 30px; }
+  .sheet-note { margin-top: 10px; }
+  .sheet-sizes { margin-top: 14px; }
+  .sheet-qty { margin: 14px 0; }
+}
+@media (max-width: 640px) {
+  .sheet-body { display: flex; flex-direction: column; }
+  .sheet-gallery {
+    position: relative;
+    height: min(34vh, 260px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 20px 10px;
+    background: #f7f7f7;
+  }
+  .sheet-gallery img {
+    width: auto;
+    height: 100%;
+    max-width: min(70vw, 280px);
+    max-height: none;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
+  }
+  .sheet-info { padding: 20px 20px 32px; }
+}
