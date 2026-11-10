@@ -807,14 +807,17 @@ a { text-decoration: none; }
 }
 
 
-/* ---------- Fiche produit : image compacte et détails visibles ---------- */
+/* ---------- Fiche produit : grande image et détails en regard ---------- */
 @media (min-width: 641px) {
-  .sheet { width: min(780px, 100%); }
+  .sheet {
+    width: min(920px, 100%);
+    background: #fff;
+  }
   .sheet-body {
     display: grid;
-    grid-template-columns: minmax(220px, 34%) minmax(0, 1fr);
-    align-items: start;
-    min-height: 100%;
+    grid-template-columns: minmax(300px, 42%) minmax(0, 1fr);
+    align-items: stretch;
+    min-height: 100vh;
   }
   .sheet-gallery {
     position: sticky;
@@ -823,37 +826,42 @@ a { text-decoration: none; }
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 64px 16px 24px;
-    background: #f7f7f7;
+    padding: 72px 20px 32px;
+    background: #f5f5f3;
   }
   .sheet-gallery img {
+    display: block;
     width: 100%;
-    max-width: 260px;
-    max-height: min(58vh, 480px);
+    max-width: 360px;
+    max-height: min(72vh, 660px);
     aspect-ratio: 3 / 4;
     object-fit: contain;
     object-position: center;
   }
-  .sheet-info { min-width: 0; padding: 64px 26px 30px; }
+  .sheet-info {
+    min-width: 0;
+    padding: 66px 28px 34px;
+  }
   .sheet-note { margin-top: 10px; }
-  .sheet-sizes { margin-top: 14px; }
-  .sheet-qty { margin: 14px 0; }
+  .sheet-sizes { margin-top: 16px; }
+  .sheet-qty { margin: 16px 0; }
 }
 @media (max-width: 640px) {
   .sheet-body { display: flex; flex-direction: column; }
   .sheet-gallery {
     position: relative;
-    height: min(34vh, 260px);
+    height: min(38vh, 310px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 36px 20px 10px;
-    background: #f7f7f7;
+    padding: 42px 18px 12px;
+    background: #f5f5f3;
   }
   .sheet-gallery img {
+    display: block;
     width: auto;
     height: 100%;
-    max-width: min(70vw, 280px);
+    max-width: min(82vw, 320px);
     max-height: none;
     aspect-ratio: 3 / 4;
     object-fit: contain;
