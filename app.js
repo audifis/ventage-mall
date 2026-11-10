@@ -28,12 +28,14 @@ const WA_NUMBER = "240222619606";
 const RAYON_LABELS = {
   hombre: "Hombre",
   mujer: "Mujer",
+  ninos: "Niños",
   relojes: "Relojes",
   gafas: "Gafas",
   joyas: "Joyas",
+  accesorios: "Accesorios",
   maletas: "Maletas"
 };
-const RAYON_ORDER = ["hombre", "mujer", "relojes", "gafas", "joyas", "maletas"];
+const RAYON_ORDER = ["hombre", "mujer", "ninos", "relojes", "gafas", "joyas", "accesorios", "maletas"];
 const PROMO_END = new Date("2026-12-31T23:59:59+01:00");
 
 const money = new Intl.NumberFormat("fr-FR");
