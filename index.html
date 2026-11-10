@@ -7,11 +7,9 @@
 <meta name="description" content="Ventage Mall à Malabo : mode, lifestyle, montres, bijoux et accessoires de grandes marques. Explorez les collections et contactez-nous sur WhatsApp.">
 <meta property="og:title" content="Ventage Mall — Malabo">
 <meta property="og:description" content="Le style, sans compromis. Mode, accessoires et grandes marques à Malabo.">
-<meta property="og:image" content="assets/facade.jpg">
-<link rel="icon" href="assets/logo.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<meta property="og:image" content="assets/facade.webp">
+<link rel="icon" href="assets/logo.webp">
+<link rel="preload" as="image" href="assets/hero-mall.webp" fetchpriority="high">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"Ventage Mall","address":{"@type":"PostalAddress","addressLocality":"Malabo","addressCountry":"GQ"},"telephone":"+240 222 619 606","openingHours":"Mo-Sa 10:00-20:00"}
@@ -32,7 +30,7 @@
 <header class="header" id="header">
   <div class="header-inner">
     <a class="logo" href="#" id="logoLink" aria-label="Ventage Mall inicio">
-      <img src="assets/logo.jpg" alt="Ventage Group">
+      <img src="assets/logo.webp" width="600" height="360" decoding="async" alt="Ventage Group">
     </a>
 
     <div class="search-wrap">
@@ -71,7 +69,7 @@
 <!-- ===== VUE ACCUEIL ===== -->
 <div id="view-home">
   <section class="hero">
-    <img src="https://images.unsplash.com/photo-1758448500717-2e4bcd79108b?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=85&amp;w=2200"
+    <img src="assets/hero-mall.webp" width="1800" height="720" decoding="async" loading="eager" fetchpriority="high"
       alt="Galería comercial contemporánea con boutiques y escaleras mecánicas"
       class="hero-img" fetchpriority="high">
     <div class="hero-shade"></div>
@@ -85,7 +83,7 @@
       </div>
     </div>
     <div class="hero-location">
-      <img src="assets/facade.jpg" alt="Façade de Ventage Mall à Malabo" loading="lazy">
+      <img src="assets/facade.webp" width="480" height="320" loading="lazy" decoding="async" alt="Façade de Ventage Mall à Malabo" loading="lazy">
       <span><small>NUESTRA DIRECCIÓN</small><strong>Ventage Mall · Malabo</strong></span>
     </div>
     <div class="hero-credit">Imagen de ambiente · <a href="https://unsplash.com/photos/modern-shopping-mall-interior-with-escalators-and-shops-hMMbIptXPjI" target="_blank" rel="noreferrer">Aalo Lens / Unsplash</a></div>
@@ -103,7 +101,7 @@
   </section>
 
   <main class="catalog home-catalog">
-    <section class="cat-section category-section">
+    <section class="cat-section category-section" id="collections">
       <div class="section-heading">
         <div><span class="eyebrow">ENCUENTRA TU ESTILO</span><h2 class="section-title">Explorar las colecciones</h2></div>
         <span class="heading-note">8 universos por descubrir</span>
@@ -132,8 +130,10 @@
         <div><span class="eyebrow">GRANDES MARCAS, GRAN ESTILO</span><h2 class="section-title">Marcas Ventage</h2></div>
         <span class="heading-note">Una selección con personalidad</span>
       </div>
-      <div class="brand-strip">
-        <button type="button" data-brand="Calvin Klein">Calvin Klein</button>
+      <div class="brand-marquee" aria-label="Nuestras marcas">
+  <div class="brand-strip-track">
+    <div class="brand-strip">
+<button type="button" data-brand="Calvin Klein">Calvin Klein</button>
         <button type="button" data-brand="BOSS">BOSS</button>
         <button type="button" data-brand="EA7">EA7</button>
         <button type="button" data-brand="Love Moschino">LOVE MOSCHINO</button>
@@ -143,20 +143,34 @@
         <button type="button" data-brand="ONLY">ONLY</button>
         <button type="button" data-brand="LIU JO">LIU JO</button>
         <button type="button" data-brand="TOUS">TOUS</button>
-      </div>
+    </div>
+    <div class="brand-strip brand-strip-clone" aria-hidden="true">
+<span>Calvin Klein</span>
+<span>BOSS</span>
+<span>EA7</span>
+<span>LOVE MOSCHINO</span>
+<span>ALDO</span>
+<span>JACK & JONES</span>
+<span>FOSSIL</span>
+<span>ONLY</span>
+<span>LIU JO</span>
+<span>TOUS</span>
+    </div>
+  </div>
+</div>
     </section>
 
-    <section class="campaign-section" aria-label="Collections à découvrir">
+    <section class="campaign-section" aria-label="Colecciones por descubrir">
       <button class="campaign-card campaign-men" type="button" data-rayon="hombre">
-        <img src="assets/products/boss-tux.jpg" alt="Sélection mode homme" loading="lazy">
+        <img src="assets/products/boss-tux.webp" alt="Colección de moda para hombre" loading="lazy">
         <span class="campaign-overlay"><small>ESTILO Y ELEGANCIA</small><strong>Moda Hombre</strong><em>Descubrir la colección →</em></span>
       </button>
       <button class="campaign-card campaign-women" type="button" data-rayon="mujer">
-        <img src="assets/products/diesel-mujer.jpg" alt="Sélection mode femme" loading="lazy">
+        <img src="assets/products/diesel-mujer.webp" alt="Colección de moda para mujer" loading="lazy">
         <span class="campaign-overlay"><small>ESTILO Y REFINAMIENTO</small><strong>Moda Mujer</strong><em>Descubrir la colección →</em></span>
       </button>
       <button class="campaign-card campaign-kids" type="button" data-rayon="ninos">
-        <img src="https://d13qso5xfejx18.cloudfront.net/product-media/81TR/1000/1000/0G0A9302.jpg" alt="Selección infantil BOSS" loading="lazy">
+        <img src="assets/products/remote-5cff334e2a1830.webp" alt="Selección infantil BOSS" loading="lazy">
         <span class="campaign-overlay"><small>PARA LOS MÁS PEQUEÑOS</small><strong>Universo Infantil</strong><em>Descubrir la colección →</em></span>
       </button>
     </section>
@@ -249,11 +263,11 @@
 <footer class="footer">
   <div class="footer-main">
     <div class="footer-brand">
-      <img src="assets/logo.jpg" alt="Ventage Mall" class="footer-logo">
+      <img src="assets/logo.webp" width="600" height="360" decoding="async" alt="Ventage Mall" class="footer-logo">
       <p>Más que un mall,<br><strong>una experiencia.</strong></p>
     </div>
     <div class="footer-col"><h4>Explorar</h4><a href="#" data-home-link>Inicio</a><a href="#brands" data-scroll-to="brands">Nuestras marcas</a><a href="#" data-rayon="hombre">Moda Hombre</a><a href="#" data-rayon="mujer">Moda Mujer</a></div>
-    <div class="footer-col"><h4>Nuestros universos</h4><a href="#" data-rayon="ninos">Niños</a><a href="#" data-rayon="relojes">Montres</a><a href="#" data-rayon="joyas">Bijoux</a><a href="#" data-rayon="accesorios">Accessoires</a></div>
+    <div class="footer-col"><h4>Nuestros universos</h4><a href="#" data-rayon="ninos">Niños</a><a href="#" data-rayon="relojes">Relojes</a><a href="#" data-rayon="joyas">Joyas</a><a href="#" data-rayon="accesorios">Accesorios</a></div>
     <div class="footer-col"><h4>Atención al cliente</h4><a href="https://wa.me/240222619606" target="_blank" rel="noreferrer">WhatsApp : +240 222 619 606</a><span>Malabo, Guinea Ecuatorial</span><span>Lundi – Samedi · 10h – 20h</span></div>
     <div class="footer-contact">
       <span class="eyebrow">¿TIENES UNA PREGUNTA?</span>
@@ -263,6 +277,13 @@
   </div>
   <div class="footer-bottom"><span>© 2026 Ventage Mall. Todos los derechos reservados.</span><span>Malabo · Guinea Ecuatorial</span><a href="#header">Volver arriba ↑</a></div>
 </footer>
+
+<nav class="mobile-bottom-nav" aria-label="Acceso rápido">
+  <button type="button" data-home-link aria-label="Inicio"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><small>Inicio</small></button>
+  <button type="button" data-scroll-to="collections" aria-label="Categorías"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><small>Categorías</small></button>
+  <button type="button" id="mobileSearchBtn" aria-label="Buscar"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg></span><small>Buscar</small></button>
+  <button type="button" id="mobileCartBtn" aria-label="Cesta"><span class="mobile-nav-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1 13H5L4 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><small>Cesta</small></button>
+</nav>
 
 <!-- ===== FICHE PRODUIT (sheet) ===== -->
 <div class="sheet-overlay" id="sheetOverlay" hidden></div>

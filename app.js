@@ -139,9 +139,10 @@ function makeCard(p, eager) {
   a.className = "card";
   const wished = wishlist.includes(p.id);
   const loading = eager ? "eager" : "lazy";
+  const priority = eager ? "high" : "auto";
   a.innerHTML = ''
     + '<div class="card-photo">'
-    +   '<img src="' + p.image + '" alt="' + esc(p.brand) + ' ' + esc(p.name) + '" width="600" height="800" loading="' + loading + '" decoding="async">'
+    +   '<img src="' + p.image + '" alt="' + esc(p.brand) + ' ' + esc(p.name) + '" width="600" height="800" loading="' + loading + '" fetchpriority="' + priority + '" decoding="async">'
     +   (p.promo ? '<span class="card-badge">−30 %</span>' : '')
     +   '<button class="card-wish' + (wished ? ' active' : '') + '" aria-label="Añadir a favoritos">' + heartSVG() + '</button>'
     + '</div>'
@@ -280,7 +281,7 @@ function renderHome() {
   const feat = PRODUCTS.slice().sort((a,b) => (b.promo - a.promo) || (a.price - b.price)).slice(0, 12);
   const featGrid = $("featuredGrid");
   featGrid.innerHTML = "";
-  feat.forEach((p, i) => featGrid.appendChild(makeCard(p, i < 4)));
+  feat.forEach((p, i) => featGrid.appendChild(makeCard(p, i < 2)));
 
   const brandOrder = ["Calvin Klein", "BOSS", "EA7", "Love Moschino", "ALDO", "Jack & Jones", "Fossil", "ONLY", "LIU JO", "TOUS"];
   const fresh = brandOrder
@@ -289,7 +290,7 @@ function renderHome() {
   const freshGrid = $("newArrivalsGrid");
   if (freshGrid) {
     freshGrid.innerHTML = "";
-    fresh.forEach((p, i) => freshGrid.appendChild(makeCard(p, i < 3)));
+    fresh.forEach((p) => freshGrid.appendChild(makeCard(p, false)));
   }
 }
 
@@ -298,13 +299,13 @@ function goHome() {
   currentView = "home";
   $("view-home").hidden = false;
   $("view-rayon").hidden = true;
-  document.querySelector(".nav-home")?.classList.add("is-active");
+  document.querySelectorAll(".main-nav button").forEach(item => item.classList.toggle("is-active", item.classList.contains("nav-home")));
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function goRayon(rayon) {
   currentView = "rayon";
-  document.querySelector(".nav-home")?.classList.remove("is-active");
+  document.querySelectorAll(".main-nav button").forEach(item => item.classList.toggle("is-active", item.dataset.rayon === rayon));
   currentRayon = rayon;
   marca = ""; talla = ""; priceMin = ""; priceMax = ""; onlyPromo = false;
   $("fPriceMin").value = ""; $("fPriceMax").value = ""; $("fOnlyPromo").checked = false;
@@ -653,6 +654,7 @@ document.querySelectorAll("[data-rayon]").forEach(button => {
     event.preventDefault();
     const rayon = button.dataset.rayon || "todo";
     goRayon(rayon);
+    document.querySelectorAll(".main-nav button").forEach(item => item.classList.toggle("is-active", item === button));
   });
 });
 document.querySelectorAll("[data-brand]").forEach(button => {
@@ -668,12 +670,27 @@ document.querySelectorAll("[data-scroll-to]").forEach(button => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
     const target = document.getElementById(button.dataset.scrollTo);
-    if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (target) {
+      if (currentView !== "home") {
+        goHome();
+        window.setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 180);
+      } else {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
   });
 });
 document.querySelectorAll("[data-home-link]").forEach(link => {
   link.addEventListener("click", (event) => { event.preventDefault(); goHome(); });
 });
+const mobileSearchBtn = $("mobileSearchBtn");
+if (mobileSearchBtn) mobileSearchBtn.onclick = () => {
+  goHome();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.setTimeout(() => $("q").focus(), 250);
+};
+const mobileCartBtn = $("mobileCartBtn");
+if (mobileCartBtn) mobileCartBtn.onclick = () => { renderCart(); openDrawer("cart"); };
 $("filtersToggle").onclick = openFiltersMobile;
 $("filtersClose").onclick = closeDrawers;
 $("filtersOverlay").onclick = closeDrawers;

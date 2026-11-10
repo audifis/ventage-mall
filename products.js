@@ -6,7 +6,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 42000,
   "promo": false,
-  "image": "assets/products/tommy-polo.jpg",
+  "image": "assets/products/tommy-polo.webp",
   "sizes": [
    "S",
    "M",
@@ -21,7 +21,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/tommy-navy.jpg",
+  "image": "assets/products/tommy-navy.webp",
   "sizes": [
    "S",
    "M",
@@ -36,7 +36,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 39000,
   "promo": true,
-  "image": "assets/products/tommy-red.jpg",
+  "image": "assets/products/tommy-red.webp",
   "sizes": [
    "S",
    "M",
@@ -51,7 +51,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 85000,
   "promo": false,
-  "image": "assets/products/tommy-shoe.jpg",
+  "image": "assets/products/tommy-shoe.webp",
   "sizes": [
    "40",
    "41",
@@ -67,7 +67,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 68000,
   "promo": false,
-  "image": "assets/products/boss-shirt.jpg",
+  "image": "assets/products/boss-shirt.webp",
   "sizes": [
    "S",
    "M",
@@ -82,7 +82,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 145000,
   "promo": true,
-  "image": "assets/products/boss-blazer.jpg",
+  "image": "assets/products/boss-blazer.webp",
   "sizes": [
    "S",
    "M",
@@ -97,7 +97,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 220000,
   "promo": false,
-  "image": "assets/products/boss-tux.jpg",
+  "image": "assets/products/boss-tux.webp",
   "sizes": [
    "S",
    "M",
@@ -112,7 +112,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 185000,
   "promo": false,
-  "image": "assets/products/boss-suit.jpg",
+  "image": "assets/products/boss-suit.webp",
   "sizes": [
    "S",
    "M",
@@ -127,7 +127,7 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 78000,
   "promo": false,
-  "image": "assets/products/boss-sun.jpg",
+  "image": "assets/products/boss-sun.webp",
   "sizes": [
    "Única"
   ]
@@ -139,7 +139,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 79000,
   "promo": false,
-  "image": "assets/products/diesel-jeans.jpg",
+  "image": "assets/products/diesel-jeans.webp",
   "sizes": [
    "S",
    "M",
@@ -154,7 +154,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 98000,
   "promo": true,
-  "image": "assets/products/diesel-jacket.jpg",
+  "image": "assets/products/diesel-jacket.webp",
   "sizes": [
    "S",
    "M",
@@ -169,7 +169,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 120000,
   "promo": false,
-  "image": "assets/products/diesel-look.jpg",
+  "image": "assets/products/diesel-look.webp",
   "sizes": [
    "S",
    "M",
@@ -184,7 +184,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 88000,
   "promo": false,
-  "image": "assets/products/diesel-mujer.jpg",
+  "image": "assets/products/diesel-mujer.webp",
   "sizes": [
    "S",
    "M",
@@ -199,7 +199,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 52000,
   "promo": false,
-  "image": "assets/products/jj-jeans.jpg",
+  "image": "assets/products/jj-jeans.webp",
   "sizes": [
    "S",
    "M",
@@ -214,7 +214,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 48000,
   "promo": true,
-  "image": "assets/products/jj-shirt.jpg",
+  "image": "assets/products/jj-shirt.webp",
   "sizes": [
    "S",
    "M",
@@ -229,7 +229,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 54000,
   "promo": false,
-  "image": "assets/products/jj-light.jpg",
+  "image": "assets/products/jj-light.webp",
   "sizes": [
    "S",
    "M",
@@ -244,7 +244,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 28000,
   "promo": false,
-  "image": "assets/products/jj-tee.jpg",
+  "image": "assets/products/jj-tee.webp",
   "sizes": [
    "S",
    "M",
@@ -259,7 +259,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 46000,
   "promo": false,
-  "image": "assets/products/jj-oxford.jpg",
+  "image": "assets/products/jj-oxford.webp",
   "sizes": [
    "S",
    "M",
@@ -274,7 +274,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 32000,
   "promo": false,
-  "image": "assets/products/ck-tee.jpg",
+  "image": "assets/products/ck-tee.webp",
   "sizes": [
    "S",
    "M",
@@ -289,7 +289,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 38000,
   "promo": false,
-  "image": "assets/products/ck-teal.jpg",
+  "image": "assets/products/ck-teal.webp",
   "sizes": [
    "S",
    "M",
@@ -304,7 +304,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 42000,
   "promo": true,
-  "image": "assets/products/ck-black.jpg",
+  "image": "assets/products/ck-black.webp",
   "sizes": [
    "S",
    "M",
@@ -319,7 +319,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 48000,
   "promo": false,
-  "image": "assets/products/ck-zip.jpg",
+  "image": "assets/products/ck-zip.webp",
   "sizes": [
    "S",
    "M",
@@ -334,7 +334,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 95000,
   "promo": true,
-  "image": "assets/products/ea7-suit.jpg",
+  "image": "assets/products/ea7-suit.webp",
   "sizes": [
    "S",
    "M",
@@ -349,7 +349,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/ea7-mujer.jpg",
+  "image": "assets/products/ea7-mujer.webp",
   "sizes": [
    "S",
    "M",
@@ -364,7 +364,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 55000,
   "promo": false,
-  "image": "assets/products/ea7-polo.jpg",
+  "image": "assets/products/ea7-polo.webp",
   "sizes": [
    "S",
    "M",
@@ -379,7 +379,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/ea7-zip.jpg",
+  "image": "assets/products/ea7-zip.webp",
   "sizes": [
    "S",
    "M",
@@ -394,7 +394,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 75000,
   "promo": false,
-  "image": "assets/products/aldo-sneaker.jpg",
+  "image": "assets/products/aldo-sneaker.webp",
   "sizes": [
    "40",
    "41",
@@ -410,7 +410,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 72000,
   "promo": false,
-  "image": "assets/products/aldo-loafer.jpg",
+  "image": "assets/products/aldo-loafer.webp",
   "sizes": [
    "40",
    "41",
@@ -426,7 +426,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 78000,
   "promo": true,
-  "image": "assets/products/aldo-cognac.jpg",
+  "image": "assets/products/aldo-cognac.webp",
   "sizes": [
    "40",
    "41",
@@ -442,7 +442,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 115000,
   "promo": true,
-  "image": "assets/products/guess-bag.jpg",
+  "image": "assets/products/guess-bag.webp",
   "sizes": [
    "S",
    "M",
@@ -457,7 +457,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/guess-grey.jpg",
+  "image": "assets/products/guess-grey.webp",
   "sizes": [
    "40",
    "41",
@@ -473,7 +473,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 95000,
   "promo": false,
-  "image": "assets/products/guess-platform.jpg",
+  "image": "assets/products/guess-platform.webp",
   "sizes": [
    "40",
    "41",
@@ -489,7 +489,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/guess-white.jpg",
+  "image": "assets/products/guess-white.webp",
   "sizes": [
    "40",
    "41",
@@ -505,7 +505,7 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 72000,
   "promo": false,
-  "image": "assets/products/guess-sun.jpg",
+  "image": "assets/products/guess-sun.webp",
   "sizes": [
    "Única"
   ]
@@ -517,7 +517,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 98000,
   "promo": true,
-  "image": "assets/products/moschino-bag.jpg",
+  "image": "assets/products/moschino-bag.webp",
   "sizes": [
    "S",
    "M",
@@ -532,7 +532,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/mosc-heart.jpg",
+  "image": "assets/products/mosc-heart.webp",
   "sizes": [
    "S",
    "M",
@@ -547,7 +547,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 94000,
   "promo": false,
-  "image": "assets/products/mosc-chain.jpg",
+  "image": "assets/products/mosc-chain.webp",
   "sizes": [
    "S",
    "M",
@@ -562,7 +562,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 86000,
   "promo": false,
-  "image": "assets/products/mosc-pink.jpg",
+  "image": "assets/products/mosc-pink.webp",
   "sizes": [
    "S",
    "M",
@@ -577,7 +577,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/mosc-shoulder.jpg",
+  "image": "assets/products/mosc-shoulder.webp",
   "sizes": [
    "S",
    "M",
@@ -592,7 +592,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 145000,
   "promo": false,
-  "image": "assets/products/festina-chrono.jpg",
+  "image": "assets/products/festina-chrono.webp",
   "sizes": [
    "Única"
   ]
@@ -604,7 +604,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 155000,
   "promo": true,
-  "image": "assets/products/fest-green.jpg",
+  "image": "assets/products/fest-green.webp",
   "sizes": [
    "Única"
   ]
@@ -616,7 +616,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 168000,
   "promo": false,
-  "image": "assets/products/fest-white.jpg",
+  "image": "assets/products/fest-white.webp",
   "sizes": [
    "Única"
   ]
@@ -628,7 +628,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 168000,
   "promo": false,
-  "image": "assets/products/fest-black.jpg",
+  "image": "assets/products/fest-black.webp",
   "sizes": [
    "Única"
   ]
@@ -640,7 +640,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 175000,
   "promo": false,
-  "image": "assets/products/fest-gold.jpg",
+  "image": "assets/products/fest-gold.webp",
   "sizes": [
    "Única"
   ]
@@ -652,7 +652,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 132000,
   "promo": false,
-  "image": "assets/products/fest-classic.jpg",
+  "image": "assets/products/fest-classic.webp",
   "sizes": [
    "Única"
   ]
@@ -664,7 +664,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 89000,
   "promo": false,
-  "image": "assets/products/fossil-blue.jpg",
+  "image": "assets/products/fossil-blue.webp",
   "sizes": [
    "Única"
   ]
@@ -676,7 +676,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 95000,
   "promo": true,
-  "image": "assets/products/fossil-grey.jpg",
+  "image": "assets/products/fossil-grey.webp",
   "sizes": [
    "Única"
   ]
@@ -688,7 +688,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 98000,
   "promo": false,
-  "image": "assets/products/fossil-black.jpg",
+  "image": "assets/products/fossil-black.webp",
   "sizes": [
    "Única"
   ]
@@ -700,7 +700,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 185000,
   "promo": false,
-  "image": "assets/products/mk-chain.jpg",
+  "image": "assets/products/mk-chain.webp",
   "sizes": [
    "Única"
   ]
@@ -712,7 +712,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 210000,
   "promo": false,
-  "image": "assets/products/mk-ritz.jpg",
+  "image": "assets/products/mk-ritz.webp",
   "sizes": [
    "Única"
   ]
@@ -724,7 +724,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 195000,
   "promo": true,
-  "image": "assets/products/mk-gold.jpg",
+  "image": "assets/products/mk-gold.webp",
   "sizes": [
    "Única"
   ]
@@ -736,7 +736,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/mk-link.jpg",
+  "image": "assets/products/mk-link.webp",
   "sizes": [
    "Única"
   ]
@@ -748,7 +748,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 188000,
   "promo": false,
-  "image": "assets/products/mk-case.jpg",
+  "image": "assets/products/mk-case.webp",
   "sizes": [
    "Única"
   ]
@@ -760,7 +760,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 245000,
   "promo": true,
-  "image": "assets/products/lambo.jpg",
+  "image": "assets/products/lambo.webp",
   "sizes": [
    "Única"
   ]
@@ -772,7 +772,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 125000,
   "promo": true,
-  "image": "assets/products/gant.jpg",
+  "image": "assets/products/gant.webp",
   "sizes": [
    "Única"
   ]
@@ -784,7 +784,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 72000,
   "promo": true,
-  "image": "assets/products/tous-bear.jpg",
+  "image": "assets/products/tous-bear.webp",
   "sizes": [
    "Única"
   ]
@@ -796,7 +796,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 86000,
   "promo": true,
-  "image": "assets/products/majorica-pearls.jpg",
+  "image": "assets/products/majorica-pearls.webp",
   "sizes": [
    "Única"
   ]
@@ -808,7 +808,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 92000,
   "promo": false,
-  "image": "assets/products/maj-white.jpg",
+  "image": "assets/products/maj-white.webp",
   "sizes": [
    "Única"
   ]
@@ -820,7 +820,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 64000,
   "promo": false,
-  "image": "assets/products/maj-pendant.jpg",
+  "image": "assets/products/maj-pendant.webp",
   "sizes": [
    "Única"
   ]
@@ -832,7 +832,7 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 65000,
   "promo": false,
-  "image": "assets/products/police-sun.jpg",
+  "image": "assets/products/police-sun.webp",
   "sizes": [
    "Única"
   ]
@@ -844,7 +844,7 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 68000,
   "promo": true,
-  "image": "assets/products/pol-shield.jpg",
+  "image": "assets/products/pol-shield.webp",
   "sizes": [
    "Única"
   ]
@@ -856,7 +856,7 @@ const PRODUCTS = [
   "rayon": "gafas",
   "price": 62000,
   "promo": false,
-  "image": "assets/products/pol-aviator.jpg",
+  "image": "assets/products/pol-aviator.webp",
   "sizes": [
    "Única"
   ]
@@ -868,7 +868,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 165000,
   "promo": false,
-  "image": "assets/products/samsonite-carry.jpg",
+  "image": "assets/products/samsonite-carry.webp",
   "sizes": [
    "Única"
   ]
@@ -880,7 +880,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 189000,
   "promo": false,
-  "image": "assets/products/samsonite-winfield.jpg",
+  "image": "assets/products/samsonite-winfield.webp",
   "sizes": [
    "Única"
   ]
@@ -892,7 +892,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 175000,
   "promo": true,
-  "image": "assets/products/sam-plum.jpg",
+  "image": "assets/products/sam-plum.webp",
   "sizes": [
    "Única"
   ]
@@ -904,7 +904,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-red.jpg",
+  "image": "assets/products/sam-red.webp",
   "sizes": [
    "Única"
   ]
@@ -916,7 +916,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-black.jpg",
+  "image": "assets/products/sam-black.webp",
   "sizes": [
    "Única"
   ]
@@ -928,7 +928,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 198000,
   "promo": false,
-  "image": "assets/products/sam-blue.jpg",
+  "image": "assets/products/sam-blue.webp",
   "sizes": [
    "Única"
   ]
@@ -940,7 +940,7 @@ const PRODUCTS = [
   "rayon": "maletas",
   "price": 45000,
   "promo": false,
-  "image": "assets/products/sam-soft.jpg",
+  "image": "assets/products/sam-soft.webp",
   "sizes": [
    "Única"
   ]
@@ -952,7 +952,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 105000,
   "promo": false,
-  "image": "https://cdn.endource.com/image/direct/ae5f7777f1261e8a9dbb9d763f0ecfea475ea1f9/default.jpg?class=1600&optimizer=image",
+  "image": "assets/products/remote-a08f5446c196d6.webp",
   "sizes": [
    "Única"
   ]
@@ -964,7 +964,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 52000,
   "promo": false,
-  "image": "https://cdn.griffeshop.com/gi.php?a=t&h=1000&src=https%3A%2F%2Fcdn.griffeshop.com%2Fcatalog%2F45362%2Fcalvinkleinpolomanichecorteuomobianco_1.jpg&w=1000&zc=2",
+  "image": "assets/products/brand-a1df010207c6f4.webp",
   "sizes": [
    "S",
    "M",
@@ -979,7 +979,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 88000,
   "promo": false,
-  "image": "https://i.ladendirekt.com/proxy?domain=damenmode&height=1200&pid=ae1d8599-7070-576a-b7d2-c0296d77b926&sgn=13JNO4EFMEb8ztAa6m7KBEzOQ1LSiNKBpemvyB%2B4RJk%3D&url=https%3A%2F%2Fimg.modivo.cloud%2Fproduct%281%2F0%2F8%2F9%2F1089740d5e7ba2776b3569fa32bc9478d6d96910_01_8721107554198_MM.jpg%2Cjpg%29%2Fcalvin-klein-jeans-kleid-fur-den-alltag-logo-j20j225290-schwarz-slim-fit-0000304656132.jpg&width=1200",
+  "image": "assets/products/remote-044f3a4ad4e2c6.webp",
   "sizes": [
    "XS",
    "S",
@@ -995,7 +995,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 125000,
   "promo": false,
-  "image": "https://www.sneakertwins.de/out/pictures/master/product/1/calvin_klein_minimal_monogram_top_handle_2_k60k611868_ci2_1165.jpg",
+  "image": "assets/products/remote-28d9c26e4307ea.webp",
   "sizes": [
    "Única"
   ]
@@ -1007,7 +1007,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 78000,
   "promo": false,
-  "image": "https://cdn.plutosport.com/a/ProductMedia/Calvin%20Klein/P.CK.JEA.3326/Calvin-Klein-Skinny-Jeans-Heren_5-2307271608.jpg?profile=max_width_mobile",
+  "image": "assets/products/remote-6c8e6dbfe73962.webp",
   "sizes": [
    "30",
    "32",
@@ -1022,7 +1022,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 46000,
   "promo": false,
-  "image": "assets/products/ck-black.jpg",
+  "image": "assets/products/ck-black.webp",
   "sizes": [
    "S",
    "M",
@@ -1037,7 +1037,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 135000,
   "promo": false,
-  "image": "https://afosto-cdn-01.afosto.com/3oe2e/product/1701907221-50536504_100_120-Photoroom.jpg",
+  "image": "assets/products/remote-f7536fb80504f5.webp",
   "sizes": [
    "40",
    "41",
@@ -1053,7 +1053,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 185000,
   "promo": false,
-  "image": "https://cms.brnstc.de/product_images/680x930_retina/cpro/media/images/product/25/4/100175802111000_0_1744031451458.jpg",
+  "image": "assets/products/remote-1b213d78fbd4db.webp",
   "sizes": [
    "36",
    "38",
@@ -1068,7 +1068,7 @@ const PRODUCTS = [
   "rayon": "ninos",
   "price": 75000,
   "promo": false,
-  "image": "https://d13qso5xfejx18.cloudfront.net/product-media/81TR/1000/1000/0G0A9302.jpg",
+  "image": "assets/products/remote-5cff334e2a1830.webp",
   "sizes": [
    "6M",
    "12M",
@@ -1083,7 +1083,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 85000,
   "promo": false,
-  "image": "https://images.hugoboss.com/is/image/boss/hbeu50471335_100_300?%24re_fullPageZoom%24=&align=1%2C1&bgcolor=ebebeb&fit=crop%2C1&hei=1818&lastModified=1781171439000&qlt=85&wid=1200",
+  "image": "assets/products/remote-8966b0fadbdd96.webp",
   "sizes": [
    "S",
    "M",
@@ -1098,7 +1098,7 @@ const PRODUCTS = [
   "rayon": "ninos",
   "price": 82000,
   "promo": false,
-  "image": "https://www.grifo210.com/cdn/shop/files/AW25---boss_20kids---J52533269.jpg?v=1759301155",
+  "image": "assets/products/remote-cb885f90a403dd.webp",
   "sizes": [
    "4A",
    "6A",
@@ -1113,7 +1113,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 135000,
   "promo": false,
-  "image": "https://img.modivo.cloud/product%288/6/7/9/86794df740122b99850ca4942670d891a8284f24_02_8056787352544.jpg%2Cjpg%29/ea7-emporio-armani-teplakova-souprava-3rpv53-pj08z-1200-cerna-regular-fit-0000301875796.jpg",
+  "image": "assets/products/remote-4268d3a6b9bda9.webp",
   "sizes": [
    "S",
    "M",
@@ -1128,7 +1128,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 68000,
   "promo": false,
-  "image": "https://assets-cf.armani.com/image/upload/v1756761399/7W000232_AF12625_UC001_D_SS2026.jpg",
+  "image": "assets/products/remote-1bc572761c5f5a.webp",
   "sizes": [
    "XS",
    "S",
@@ -1143,7 +1143,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 110000,
   "promo": false,
-  "image": "https://www.nselection.rs/UserFiles/products/big/11/18/zenske-patike-emporio-armani-X8X191-XK406-U245.png",
+  "image": "assets/products/remote-fbfb9a65e35535.webp",
   "sizes": [
    "36",
    "37",
@@ -1159,7 +1159,7 @@ const PRODUCTS = [
   "rayon": "ninos",
   "price": 95000,
   "promo": false,
-  "image": "https://www.juniorcouture.co.uk/dw/image/v2/BGHV_PRD/on/demandware.static/-/Sites-master-catalog/default/dw4f07874c/images/EA7-7B000030/EA7-7B000030-UC001-2.jpg?sh=1500&sw=1500",
+  "image": "assets/products/remote-caa8e6f5987d44.webp",
   "sizes": [
    "8A",
    "10A",
@@ -1174,7 +1174,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 108000,
   "promo": false,
-  "image": "https://jdsports.ca/cdn/shop/files/7X000881-MZ801__jd_ea7_black___white_vintage_smoked_pearl__formal_grey_4.jpg?v=1772875349&width=2048",
+  "image": "assets/products/remote-0cf983ed1d4c7e.webp",
   "sizes": [
    "40",
    "41",
@@ -1190,7 +1190,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 128000,
   "promo": false,
-  "image": "https://optimage.exxeselection.com/product/cache/1200x1800_ea7-fermuarli-cepli-regular-fit-kapusonlu-bayan-esofman-takimi-8ntv51-tj9rz-1200-siyah-3157079-44-B.jpg",
+  "image": "assets/products/remote-d624d38f902767.webp",
   "sizes": [
    "XS",
    "S",
@@ -1205,7 +1205,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 160000,
   "promo": false,
-  "image": "https://cuoieriashop.com/cdn/shop/products/jc4055pp1ila0802_7.jpg?v=1709650297&width=1000",
+  "image": "assets/products/remote-805d5494913b84.webp",
   "sizes": [
    "Única"
   ]
@@ -1217,7 +1217,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 125000,
   "promo": false,
-  "image": "https://d13qso5xfejx18.cloudfront.net/product-media/7BP2/1000/1000/0G0A5726.jpg",
+  "image": "assets/products/remote-ad4baaafa8ef30.webp",
   "sizes": [
    "36",
    "37",
@@ -1233,7 +1233,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 145000,
   "promo": false,
-  "image": "https://media-catalog.giglio.com/images/f_auto/t_prodZoom/v1/products/D56438.002_1/love-moschino.jpg",
+  "image": "assets/products/remote-6f582e4bc5f59f.webp",
   "sizes": [
    "XS",
    "S",
@@ -1248,7 +1248,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 155000,
   "promo": false,
-  "image": "https://img.modivo.cloud/product%28e/6/4/1/e641ff3df15e0f96fcd810744b7d21c71afed419_20_8032698379818_pl.jpg%2Cjpg%29/love-moschino-sumka-jc4121pp1llb0000-chornii-8032698379818.jpg",
+  "image": "assets/products/remote-9577779af5889f.webp",
   "sizes": [
    "Única"
   ]
@@ -1260,7 +1260,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 170000,
   "promo": false,
-  "image": "assets/products/moschino-bag.jpg",
+  "image": "assets/products/moschino-bag.webp",
   "sizes": [
    "Única"
   ]
@@ -1272,7 +1272,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 89000,
   "promo": false,
-  "image": "https://aldoshoes.co.uk/cdn/shop/files/lalia_brown_227-002-029_alt2_sq_nt_1600x1600_f716681f-5505-44c9-b002-5600bcecebbd.jpg?v=1724945857&width=1946",
+  "image": "assets/products/remote-ab28416d303d87.webp",
   "sizes": [
    "Única"
   ]
@@ -1284,7 +1284,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 78000,
   "promo": false,
-  "image": "https://toplist.vn/images/800px/aldo-shoes-vietnam-606351.jpg",
+  "image": "assets/products/remote-6c54e6455ef017.webp",
   "sizes": [
    "40",
    "41",
@@ -1300,7 +1300,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 65000,
   "promo": false,
-  "image": "https://d6hqol5yrmku.cloudfront.net/catalog/product/cache/c20e000291d8f3c19e6931209d6d9148/a/l/al_02stessymid009_black_fw25_1.jpg",
+  "image": "assets/products/remote-4e498c95de7b00.webp",
   "sizes": [
    "36",
    "37",
@@ -1316,7 +1316,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 80000,
   "promo": false,
-  "image": "https://d6hqol5yrmku.cloudfront.net/catalog/product/cache/6bcf549e46a112742c9d73697618e63f/a/l/al_23winta001_black_ss24_1.jpg",
+  "image": "assets/products/remote-7b05969e96a8ba.webp",
   "sizes": [
    "Única"
   ]
@@ -1328,7 +1328,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 72000,
   "promo": false,
-  "image": "https://www.aldoshoes.com/cdn/shop/files/product_14039533_illustrious_white_110-002-042_alt3_sq_gy.jpg?v=1755735248&width=1946",
+  "image": "assets/products/remote-dc81676da22241.webp",
   "sizes": [
    "36",
    "37",
@@ -1344,7 +1344,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 79000,
   "promo": false,
-  "image": "assets/products/aldo-sneaker.jpg",
+  "image": "assets/products/aldo-sneaker.webp",
   "sizes": [
    "40",
    "41",
@@ -1360,7 +1360,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 83000,
   "promo": false,
-  "image": "assets/products/aldo-cognac.jpg",
+  "image": "assets/products/aldo-cognac.webp",
   "sizes": [
    "40",
    "41",
@@ -1376,7 +1376,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 65000,
   "promo": false,
-  "image": "https://images.jackjones.com/12275136/4726067/005/jackjones-jfwaspirecourtpusneakernoos-white.png?bg-color=%23f5f5f5&format=webp&key=10-0-3&quality=80&v=4d3976c459d9732d3837ce7796394e9f&width=640",
+  "image": "assets/products/remote-7f4d545f02324e.webp",
   "sizes": [
    "40",
    "41",
@@ -1392,7 +1392,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 68000,
   "promo": false,
-  "image": "https://images.jackjones.com/12229695/4155734/007/jackjones-jfwbalepusneakernoos-wit.png?format=webp&key=25-0-3&quality=90&v=36962536f5a6215794a4de2833e31169&width=1280",
+  "image": "assets/products/remote-34438a89dc35ec.webp",
   "sizes": [
    "40",
    "41",
@@ -1408,7 +1408,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 52000,
   "promo": false,
-  "image": "https://img01.ztat.net/article/spp-media-p1/cf84afb593b44f13af27393909f50419/e8e10c4576174b8e971aac236f47b5d7.jpg?imwidth=762",
+  "image": "assets/products/remote-4ffb3ab073e7a2.webp",
   "sizes": [
    "30",
    "32",
@@ -1423,7 +1423,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 42000,
   "promo": false,
-  "image": "assets/products/jj-tee.jpg",
+  "image": "assets/products/jj-tee.webp",
   "sizes": [
    "S",
    "M",
@@ -1438,7 +1438,7 @@ const PRODUCTS = [
   "rayon": "hombre",
   "price": 28000,
   "promo": false,
-  "image": "assets/products/jj-oxford.jpg",
+  "image": "assets/products/jj-oxford.webp",
   "sizes": [
    "S",
    "M",
@@ -1453,7 +1453,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 135000,
   "promo": false,
-  "image": "https://fossil.scene7.com/is/image/FossilPartners/ZB7256798_main?scl=1",
+  "image": "assets/products/remote-f14d8669a45483.webp",
   "sizes": [
    "Única"
   ]
@@ -1465,7 +1465,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 115000,
   "promo": false,
-  "image": "https://accuratime.com/cdn/shop/files/es5072_1200x1200.jpg?v=1739570521",
+  "image": "assets/products/remote-cb2cb2932dd9f0.webp",
   "sizes": [
    "Única"
   ]
@@ -1477,7 +1477,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 135000,
   "promo": false,
-  "image": "https://timeaccess-store.com/cdn/shop/files/FS5231_fs.jpg?v=1734596589&width=1080",
+  "image": "assets/products/remote-55d6aaa5ffb3a7.webp",
   "sizes": [
    "Única"
   ]
@@ -1489,7 +1489,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 55000,
   "promo": false,
-  "image": "https://i5.walmartimages.com/asr/69a8d765-794e-4e51-be3d-1d23a3a15b69.4ecfe42a567d0bb61c066f2de6a95b7b.jpeg?odnBg=FFFFFF&odnHeight=580&odnWidth=580",
+  "image": "assets/products/remote-e322180301e8ba.webp",
   "sizes": [
    "Única"
   ]
@@ -1501,7 +1501,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 105000,
   "promo": false,
-  "image": "assets/products/fossil-grey.jpg",
+  "image": "assets/products/fossil-grey.webp",
   "sizes": [
    "Única"
   ]
@@ -1513,7 +1513,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 125000,
   "promo": false,
-  "image": "assets/products/fossil-blue.jpg",
+  "image": "assets/products/fossil-blue.webp",
   "sizes": [
    "Única"
   ]
@@ -1525,7 +1525,7 @@ const PRODUCTS = [
   "rayon": "relojes",
   "price": 118000,
   "promo": false,
-  "image": "assets/products/fossil-black.jpg",
+  "image": "assets/products/fossil-black.webp",
   "sizes": [
    "Única"
   ]
@@ -1537,7 +1537,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 55000,
   "promo": false,
-  "image": "https://settieco.it/12108-large_default/15177238-only---giubbino-jeans-bianco.jpg",
+  "image": "assets/products/remote-1e62cedcd64854.webp",
   "sizes": [
    "XS",
    "S",
@@ -1553,7 +1553,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 48000,
   "promo": false,
-  "image": "https://thebestbuy.dk/98597-large_default/only-zally-ss-thea-kjole-fuchsia-pink-ranch-flowers.jpg",
+  "image": "assets/products/remote-459aa702caee82.webp",
   "sizes": [
    "XS",
    "S",
@@ -1569,7 +1569,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 36000,
   "promo": false,
-  "image": "https://cdn.aboutstatic.com/file/images/96c6f3c48d20090d5bd42e8fdc478c49.jpg?brightness=0.96&expand=1&height=630&quality=75&trim=1&width=1200",
+  "image": "assets/products/remote-3bd114c9175e10.webp",
   "sizes": [
    "XS",
    "S",
@@ -1585,7 +1585,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 78000,
   "promo": false,
-  "image": "https://carredelamode.com/COSTES_WEB/photos/Webzoom/8843201_2.jpg",
+  "image": "assets/products/remote-1a87fe436366f3.webp",
   "sizes": [
    "XS",
    "S",
@@ -1601,7 +1601,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 42000,
   "promo": false,
-  "image": "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/E54652s7.jpg?im=Resize",
+  "image": "assets/products/remote-547fa2f7b97383.webp",
   "sizes": [
    "XS",
    "S",
@@ -1617,7 +1617,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 45000,
   "promo": false,
-  "image": "https://www.baur.de/_next/image?q=75&url=https%3A%2F%2Fbilder.baur.de%2Fi%2Fempiriecom%2F9adda1aa143ff8b44b87e9a00a913273.jpg%3F%24format_dv_desk_132%24&w=3840",
+  "image": "assets/products/remote-958341721e2eed.webp",
   "sizes": [
    "34",
    "36",
@@ -1633,7 +1633,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 78000,
   "promo": false,
-  "image": "https://product.fidcdn.net/cdn-cgi/image/f%3Dauto%2Cwidth%3D3000%2Cquality%3D95/a0sjil1k695kui2c69akokq769952hq1955jehal8p13gc9m8h6kkiq69ha30iqa9oq4uhq469244d1k90o3qf9t7li64cb268p68pj5c8r32d3569hm2e9m70o3ep9j70o6cc9h74p36%3D%3D%3D.jpg",
+  "image": "assets/products/remote-c2f9678f805c5d.webp",
   "sizes": [
    "XS",
    "S",
@@ -1649,7 +1649,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 45000,
   "promo": false,
-  "image": "https://cdn.laredoute.com/cdn-cgi/image/width%3D650%2Cheight%3D650%2Cfit%3Dpad%2Cdpr%3D1/products/0/0/5/0050ac50d0f19484cfa035c694eac4f4.jpg",
+  "image": "assets/products/remote-7e6d21a5f1002a.webp",
   "sizes": [
    "XS",
    "S",
@@ -1665,7 +1665,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 38000,
   "promo": false,
-  "image": "https://bilder.baur.de/i/empiriecom/0f927fa806a00f4153e8a036badb319c.jpg",
+  "image": "assets/products/remote-79838bd3b0d9e1.webp",
   "sizes": [
    "XS",
    "S",
@@ -1681,7 +1681,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 44000,
   "promo": false,
-  "image": "https://xcdn.next.co.uk/common/items/default/default/itemimages/3_4Ratio/product/lge/E54652s7.jpg?im=Resize",
+  "image": "assets/products/remote-547fa2f7b97383.webp",
   "sizes": [
    "XS",
    "S",
@@ -1697,7 +1697,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 135000,
   "promo": false,
-  "image": "https://www.liujo.com/dw/image/v2/BDNR_PRD/on/demandware.static/-/Sites-liujo-master-catalog/default/dw79f9cd63/images/8050885698283---UA2180D455578322-I-AF-N-R-01-N.jpg?sh=1032&sw=742",
+  "image": "assets/products/remote-cce56355934499.webp",
   "sizes": [
    "38",
    "40",
@@ -1712,7 +1712,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 145000,
   "promo": false,
-  "image": "https://img01.ztat.net/article/spp-media-p1/b710747d8ebe499c9847a015afc0cab8/9a1dc817e4d747a9b6560f9f93fff97e.jpg?filter=packshot&imwidth=762",
+  "image": "assets/products/remote-3598b472060820.webp",
   "sizes": [
    "Única"
   ]
@@ -1724,7 +1724,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 110000,
   "promo": false,
-  "image": "https://www.n-sport.net/UserFiles/products/big/07/30/zenske-patike-liu-jo-silvia-01-sneaker-B69015P0102-111.jpg",
+  "image": "assets/products/brand-1630ffa287b33c.webp",
   "sizes": [
    "36",
    "37",
@@ -1740,7 +1740,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 98000,
   "promo": false,
-  "image": "https://www.liujo.com/dw/image/v2/BDNR_PRD/on/demandware.static/-/Sites-liujo-master-catalog/default/dw5410699d/images/E-CA6348T2899X0770-7-N.jpeg?sh=1486&sw=1068",
+  "image": "assets/products/remote-22512a6fd25f51.webp",
   "sizes": [
    "38",
    "40",
@@ -1755,7 +1755,7 @@ const PRODUCTS = [
   "rayon": "ninos",
   "price": 45000,
   "promo": false,
-  "image": "https://img.modivo.cloud/product%281/5/7/2/1572d88315f465819135f04de29570072c0b1457_1_8056156781715.jpg%2Cjpg%29/liu-jo-kids-bluza-da0053-f0090-bialy-regular-fit.jpg",
+  "image": "assets/products/remote-20efa86b7869de.webp",
   "sizes": [
    "6A",
    "8A",
@@ -1770,7 +1770,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 88000,
   "promo": false,
-  "image": "https://www.marquessoares.pt/temp/JPG_36f0f1fde46b1e0416af1231743317a9.png",
+  "image": "assets/products/remote-3af9a836378166.webp",
   "sizes": [
    "38",
    "40",
@@ -1785,7 +1785,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 130000,
   "promo": false,
-  "image": "https://www.bagalier.com/sites/default/files/media/products/liuj/800070353704/800070353704-1.jpg",
+  "image": "assets/products/remote-4063d46640a79a.webp",
   "sizes": [
    "Única"
   ]
@@ -1797,7 +1797,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 62000,
   "promo": false,
-  "image": "https://www.liujo.com/dw/image/v2/BDNR_PRD/on/demandware.static/-/Sites-liujo-master-catalog/default/dwb0f3ff5a/images/E-CA6288T2571X0727-1-N.jpeg?sh=1486&sw=1068",
+  "image": "assets/products/remote-8f9316c0db6df9.webp",
   "sizes": [
    "38",
    "40",
@@ -1812,7 +1812,7 @@ const PRODUCTS = [
   "rayon": "accesorios",
   "price": 115000,
   "promo": false,
-  "image": "https://www.liujo.com/dw/image/v2/BDNR_PRD/on/demandware.static/-/Sites-liujo-master-catalog/default/dwe9d3fe4e/images/8054944653435---AA4269E001561632-S-AF-N-N-6-N.jpg?sh=1239&sw=891",
+  "image": "assets/products/remote-daed8c8e2a0eb6.webp",
   "sizes": [
    "Única"
   ]
@@ -1824,7 +1824,7 @@ const PRODUCTS = [
   "rayon": "mujer",
   "price": 145000,
   "promo": false,
-  "image": "https://www.liujo.com/dw/image/v2/BDNR_PRD/on/demandware.static/-/Sites-liujo-master-catalog/default/dw7e0bcfd2/images/8059524166749---CF5090T295622222-I-AF-N-R-1-N.jpg?sh=1486&sw=1068",
+  "image": "assets/products/remote-174729cffb022d.webp",
   "sizes": [
    "38",
    "40",
@@ -1839,7 +1839,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 85000,
   "promo": false,
-  "image": "https://static.tous.com/photoweb/pub/111233520/2/G/fullres.jpg?w=1000",
+  "image": "assets/products/brand-tous-pearl-hoops.webp",
   "sizes": [
    "Única"
   ]
@@ -1851,7 +1851,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 120000,
   "promo": false,
-  "image": "https://static.tous.com/photoweb/pub/1004098400/0/G/fullres.jpg?w=500",
+  "image": "assets/products/brand-tous-bear-double.webp",
   "sizes": [
    "Única"
   ]
@@ -1859,11 +1859,11 @@ const PRODUCTS = [
  {
   "id": "tous-lucia-card-wallet",
   "brand": "TOUS",
-  "name": "Porte-cartes Lucia fuchsia",
+  "name": "Portefeuille Lucia fuchsia",
   "rayon": "accesorios",
   "price": 65000,
   "promo": false,
-  "image": "https://cloud-media.tous.com/medias/sys_master/images/he8/hc9/13065929392158/515Wx515H_product_2002021525-20240117112742/515Wx515H-product-2002021525-20240117112742.jpg",
+  "image": "assets/products/brand-tous-lucia-wallet.webp",
   "sizes": [
    "Única"
   ]
@@ -1875,7 +1875,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 110000,
   "promo": false,
-  "image": "https://i.pinimg.com/736x/a0/06/86/a00686ad7616b7328ec28849fbbe89f7.jpg",
+  "image": "assets/products/remote-9262eb14698b93.webp",
   "sizes": [
    "Única"
   ]
@@ -1887,7 +1887,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 92000,
   "promo": false,
-  "image": "https://i.pinimg.com/736x/27/c8/f1/27c8f1129f3eaf348570916ca03c3a25.jpg",
+  "image": "assets/products/remote-285ba6f87bb07f.webp",
   "sizes": [
    "Única"
   ]
@@ -1899,7 +1899,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 125000,
   "promo": false,
-  "image": "https://static.tous.com/photoweb/pub/1004098400/0/G/fullres.jpg?w=500",
+  "image": "assets/products/brand-tous-bear-double.webp",
   "sizes": [
    "Única"
   ]
@@ -1911,7 +1911,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 78000,
   "promo": false,
-  "image": "https://static.tous.com/photoweb/pub/111233520/2/G/fullres.jpg?w=1000",
+  "image": "assets/products/brand-tous-pearl-hoops.webp",
   "sizes": [
    "Única"
   ]
@@ -1919,11 +1919,11 @@ const PRODUCTS = [
  {
   "id": "tous-wallet-card-fuchsia",
   "brand": "TOUS",
-  "name": "Portefeuille Lucia rose fuchsia",
+  "name": "Porte-cartes Lucia fuchsia",
   "rayon": "accesorios",
   "price": 72000,
   "promo": false,
-  "image": "https://cloud-media.tous.com/medias/sys_master/images/he8/hc9/13065929392158/515Wx515H_product_2002021525-20240117112742/515Wx515H-product-2002021525-20240117112742.jpg",
+  "image": "assets/products/brand-tous-lucia-wallet.webp",
   "sizes": [
    "Única"
   ]
@@ -1935,7 +1935,7 @@ const PRODUCTS = [
   "rayon": "joyas",
   "price": 155000,
   "promo": false,
-  "image": "assets/products/tous-bear.jpg",
+  "image": "assets/products/tous-bear.webp",
   "sizes": [
    "Única"
   ]
