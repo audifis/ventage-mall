@@ -807,15 +807,15 @@ a { text-decoration: none; }
 }
 
 
-/* ---------- Fiche produit : grande image et détails en regard ---------- */
+/* ---------- Fiche produit : grande image sans recadrage ---------- */
 @media (min-width: 641px) {
   .sheet {
-    width: min(920px, 100%);
+    width: min(1080px, 100%);
     background: #fff;
   }
   .sheet-body {
     display: grid;
-    grid-template-columns: minmax(300px, 42%) minmax(0, 1fr);
+    grid-template-columns: minmax(340px, 48%) minmax(0, 1fr);
     align-items: stretch;
     min-height: 100vh;
   }
@@ -831,16 +831,15 @@ a { text-decoration: none; }
   }
   .sheet-gallery img {
     display: block;
-    width: 100%;
-    max-width: 360px;
-    max-height: min(72vh, 660px);
+    width: min(100%, 460px);
+    height: min(78vh, 620px);
     aspect-ratio: 3 / 4;
     object-fit: contain;
     object-position: center;
   }
   .sheet-info {
     min-width: 0;
-    padding: 66px 28px 34px;
+    padding: 66px 30px 36px;
   }
   .sheet-note { margin-top: 10px; }
   .sheet-sizes { margin-top: 16px; }
