@@ -2157,3 +2157,288 @@ html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 @media (prefers-reduced-motion:reduce) {
   .brand-marquee .brand-strip-clone { display:none !important; }
 }
+
+
+/* =====================================================================
+   SUSPENDED VENTAGE SATIN RIBBON — lightweight pointer collision
+   ===================================================================== */
+.hero-ribbon-scene {
+  position:absolute;
+  z-index:4;
+  top:0;
+  right:1.2%;
+  width:clamp(440px,46vw,620px);
+  height:100%;
+  pointer-events:none;
+  overflow:visible;
+}
+.hero-ribbon-art {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  pointer-events:none;
+}
+.hero-ribbon-glint {
+  stroke-dasharray:220 900;
+  stroke-dashoffset:720;
+  animation:ribbon-glint-pass 8s ease-in-out 1.2s infinite;
+}
+.hero-ribbon-tag {
+  --tag-x:0px;
+  --tag-y:0px;
+  --tag-rotation:2deg;
+  position:absolute;
+  left:47%;
+  top:34%;
+  width:49%;
+  max-width:330px;
+  min-width:270px;
+  min-height:245px;
+  padding:23px 20px 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  border:1.5px solid #e7c47d;
+  border-radius:9px;
+  color:#fff;
+  text-align:center;
+  cursor:pointer;
+  pointer-events:auto;
+  transform:translate3d(var(--tag-x),var(--tag-y),0) rotate(var(--tag-rotation));
+  transform-origin:50% 4%;
+  background:
+    radial-gradient(ellipse at 50% -15%,rgba(72,130,195,.52),transparent 62%),
+    linear-gradient(145deg,#173e70 0%,#0b2549 48%,#071c39 100%);
+  box-shadow:
+    0 22px 45px rgba(0,8,22,.32),
+    0 7px 16px rgba(4,17,37,.2),
+    inset 0 0 0 5px rgba(235,202,139,.045),
+    inset 0 1px 0 rgba(255,255,255,.26);
+  transition:box-shadow .3s ease,filter .3s ease;
+  will-change:transform;
+  overflow:visible;
+}
+.hero-ribbon-tag::before {
+  content:"";
+  position:absolute;
+  inset:7px;
+  border:1px solid rgba(230,192,116,.62);
+  border-radius:5px;
+  pointer-events:none;
+}
+.hero-ribbon-tag::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:9px;
+  pointer-events:none;
+  background:linear-gradient(112deg,transparent 22%,rgba(255,255,255,.13) 45%,transparent 63%);
+  background-size:240% 100%;
+  background-position:130% center;
+  animation:tag-satin-sheen 7.5s ease-in-out 1.8s infinite;
+}
+.hero-ribbon-tag:hover,
+.hero-ribbon-tag:focus-visible {
+  box-shadow:
+    0 28px 55px rgba(0,8,22,.4),
+    0 0 0 3px rgba(89,157,239,.18),
+    0 0 30px rgba(70,143,224,.23),
+    inset 0 0 0 5px rgba(235,202,139,.07);
+  filter:brightness(1.08);
+  outline:0;
+}
+.hero-ribbon-eyelet {
+  position:absolute;
+  top:-17px;
+  left:calc(50% - 10px);
+  z-index:3;
+  width:20px;
+  height:20px;
+  border:4px solid #f0d28f;
+  border-radius:50%;
+  background:#0c2c55;
+  box-shadow:0 0 0 2px #9f7135,inset 0 0 0 2px #416b9a,0 2px 7px rgba(0,0,0,.28);
+}
+.hero-tag-brand,
+.hero-tag-kicker,
+.hero-tag-amount,
+.hero-tag-caption,
+.hero-tag-cta {
+  position:relative;
+  z-index:1;
+  display:block;
+}
+.hero-tag-brand {
+  color:#f2d99e;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.25em;
+  margin-bottom:4px;
+}
+.hero-tag-kicker {
+  color:rgba(255,255,255,.84);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.2em;
+}
+.hero-tag-amount {
+  color:#f2d18a;
+  font-size:clamp(56px,5.2vw,76px);
+  font-weight:950;
+  line-height:.98;
+  letter-spacing:-.065em;
+  text-shadow:0 3px 0 #936a34,0 6px 16px rgba(0,0,0,.22);
+  background:linear-gradient(100deg,#d7ad65 0%,#fff0bd 32%,#dbb56d 54%,#fff0c1 73%,#bd8b45 100%);
+  background-size:220% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 2px 5px rgba(0,0,0,.18));
+  animation:tag-gold-sheen 6.5s ease-in-out infinite;
+}
+.hero-tag-amount span { font-size:.55em; vertical-align:top; letter-spacing:-.02em; }
+.hero-tag-caption {
+  color:#e9d4aa;
+  font-family:Georgia,serif;
+  font-size:13px;
+  font-style:italic;
+  letter-spacing:.045em;
+}
+.hero-tag-cta {
+  margin-top:8px;
+  padding:9px 21px;
+  min-width:150px;
+  border-radius:999px;
+  color:#10284a;
+  background:linear-gradient(110deg,#f4dfad,#c79a51 54%,#f4dda6);
+  box-shadow:0 4px 13px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.75);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.11em;
+  transition:transform .22s ease,box-shadow .22s ease;
+}
+.hero-tag-cta b { padding-left:8px; font-size:15px; }
+.hero-ribbon-tag:hover .hero-tag-cta,
+.hero-ribbon-tag:focus-visible .hero-tag-cta {
+  transform:translateY(-2px);
+  box-shadow:0 7px 17px rgba(0,0,0,.3),0 0 0 2px rgba(255,255,255,.1);
+}
+@keyframes ribbon-glint-pass {
+  0%,55%,100% { stroke-dashoffset:720; opacity:.2; }
+  72% { stroke-dashoffset:0; opacity:.78; }
+}
+@keyframes tag-satin-sheen {
+  0%,60%,100% { background-position:130% center; }
+  78% { background-position:-30% center; }
+}
+@keyframes tag-gold-sheen {
+  0%,66%,100% { background-position:120% center; }
+  84% { background-position:-20% center; }
+}
+
+@media (max-width:1100px) {
+  .hero-ribbon-scene { right:-2%; width:50vw; }
+  .hero-ribbon-tag { min-width:245px; }
+}
+@media (max-width:760px) {
+  .hero-ribbon-scene {
+    right:-8px;
+    top:0;
+    width:230px;
+    height:245px;
+  }
+  .hero-ribbon-art { height:210px; }
+  .hero-ribbon-tag {
+    left:38%;
+    top:43%;
+    width:60%;
+    min-width:0;
+    max-width:none;
+    min-height:0;
+    padding:14px 8px 12px;
+    gap:4px;
+    border-radius:7px;
+    transform:translate3d(var(--tag-x),var(--tag-y),0) rotate(var(--tag-rotation)) scale(.94);
+  }
+  .hero-ribbon-tag::before { inset:5px; }
+  .hero-ribbon-eyelet { top:-12px; width:15px; height:15px; left:calc(50% - 7px); border-width:3px; }
+  .hero-tag-brand { font-size:7px; letter-spacing:.16em; margin-bottom:1px; }
+  .hero-tag-kicker { font-size:6px; letter-spacing:.13em; }
+  .hero-tag-amount { font-size:clamp(35px,10vw,47px); }
+  .hero-tag-caption { font-size:8px; }
+  .hero-tag-cta { margin-top:4px; min-width:0; padding:7px 11px; font-size:7px; }
+  .hero-tag-cta b { font-size:11px; padding-left:3px; }
+  .hero-location { left:12px; right:auto; bottom:10px; }
+  .hero-credit { max-width:45%; }
+}
+@media (max-width:390px) {
+  .hero-ribbon-scene { width:206px; height:224px; right:-9px; }
+  .hero-ribbon-art { height:190px; }
+  .hero-ribbon-tag { top:42%; left:36%; width:62%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-ribbon-glint,
+  .hero-tag-amount,
+  .hero-ribbon-tag::after { animation:none !important; }
+  .hero-ribbon-tag { transform:none !important; transition:none !important; }
+}
+
+
+/* Final composition: keep the mall address clear of the hanging offer. */
+@media (min-width:761px) {
+  .hero-location { left:55%; right:auto; }
+}
+@media (max-width:760px) {
+  .hero-ribbon-scene {
+    width:270px;
+    height:260px;
+    right:4px;
+  }
+  .hero-ribbon-art { height:220px; }
+  .hero-ribbon-tag {
+    left:37%;
+    top:43%;
+    width:59%;
+  }
+}
+@media (max-width:390px) {
+  .hero-ribbon-scene { width:252px; height:250px; right:2px; }
+  .hero-ribbon-art { height:210px; }
+  .hero-ribbon-tag { left:36%; top:42%; width:60%; }
+}
+
+
+/* Mobile: anchor the offer card to the right edge, entirely inside the hero. */
+@media (max-width:760px) {
+  .hero-ribbon-scene {
+    width:252px;
+    height:250px;
+    right:2px;
+  }
+  .hero-ribbon-tag {
+    left:auto !important;
+    right:8px;
+    top:42%;
+    width:164px;
+    min-width:0;
+    max-width:164px;
+    min-height:0;
+    padding:13px 8px 11px;
+    gap:4px;
+  }
+}
+@media (max-width:390px) {
+  .hero-ribbon-scene { width:244px; height:244px; right:1px; }
+  .hero-ribbon-art { height:202px; }
+  .hero-ribbon-tag {
+    right:7px;
+    top:41%;
+    width:157px;
+    max-width:157px;
+    padding:12px 7px 10px;
+  }
+}

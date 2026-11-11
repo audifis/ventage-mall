@@ -779,6 +779,128 @@ if (heroSpotlight && finePointer.matches && !reducedMotion.matches) {
   }, { passive: true });
 }
 
+/* ---------- Suspended satin tag: soft mouse collision + spring return ---------- */
+const ribbonHero = document.querySelector(".hero");
+const ribbonScene = document.querySelector(".hero-ribbon-scene");
+const ribbonTag = document.querySelector(".hero-ribbon-tag");
+const ribbonCord = document.getElementById("heroRibbonCord");
+const ribbonFabric = document.getElementById("heroSatinFabric");
+
+if (ribbonHero && ribbonScene && ribbonTag && ribbonCord && ribbonFabric && finePointer.matches && !reducedMotion.matches) {
+  let pointerInside = false;
+  let tagX = 0;
+  let tagY = 0;
+  let velocityX = 0;
+  let velocityY = 0;
+  let tagAngle = 2;
+  let velocityAngle = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let targetAngle = 2;
+  let ribbonFrame = 0;
+
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+
+  const updateRibbonCord = () => {
+    const svgRect = ribbonScene.querySelector("svg").getBoundingClientRect();
+    const scaleX = 620 / (svgRect.width || 1);
+    const scaleY = 520 / (svgRect.height || 1);
+    const holeX = (ribbonTag.offsetLeft + ribbonTag.offsetWidth / 2 + tagX) * scaleX;
+    const holeY = (ribbonTag.offsetTop - 7 + tagY) * scaleY;
+    const anchorX = 438;
+    const anchorY = 145;
+    const midX = (anchorX + holeX) / 2;
+    const path = "M " + anchorX + " " + anchorY +
+      " C " + (midX - 18) + " " + (anchorY + 24) +
+      ", " + (midX + 18) + " " + (holeY - 24) +
+      ", " + holeX + " " + holeY;
+    ribbonCord.setAttribute("d", path);
+    const goldEcho = ribbonCord.nextElementSibling;
+    if (goldEcho && goldEcho.tagName.toLowerCase() === "path") goldEcho.setAttribute("d", path);
+  };
+
+  const animateRibbon = () => {
+    const spring = 0.085;
+    velocityX = (velocityX + (targetX - tagX) * spring) * 0.79;
+    velocityY = (velocityY + (targetY - tagY) * spring) * 0.79;
+    velocityAngle = (velocityAngle + (targetAngle - tagAngle) * 0.075) * 0.82;
+    tagX += velocityX;
+    tagY += velocityY;
+    tagAngle += velocityAngle;
+
+    ribbonTag.style.setProperty("--tag-x", tagX.toFixed(2) + "px");
+    ribbonTag.style.setProperty("--tag-y", tagY.toFixed(2) + "px");
+    ribbonTag.style.setProperty("--tag-rotation", tagAngle.toFixed(2) + "deg");
+    const fabricX = (tagX * 0.13).toFixed(2);
+    const fabricY = (tagY * 0.09).toFixed(2);
+    const fabricAngle = (tagAngle * 0.10).toFixed(2);
+    ribbonFabric.setAttribute(
+      "transform",
+      "translate(" + fabricX + " " + fabricY + ") rotate(" + fabricAngle + " 438 145)"
+    );
+    updateRibbonCord();
+
+    const unsettled = Math.abs(targetX - tagX) + Math.abs(targetY - tagY) > 0.12
+      || Math.abs(velocityX) + Math.abs(velocityY) > 0.12
+      || Math.abs(targetAngle - tagAngle) > 0.03
+      || Math.abs(velocityAngle) > 0.03;
+
+    if (unsettled) {
+      ribbonFrame = window.requestAnimationFrame(animateRibbon);
+    } else {
+      ribbonFrame = 0;
+    }
+  };
+
+  const nudgeRibbon = (event) => {
+    if (event.pointerType !== "mouse") return;
+    const heroRect = ribbonHero.getBoundingClientRect();
+    const tagRect = ribbonTag.getBoundingClientRect();
+    pointerInside = true;
+
+    const normalizedX = clamp((event.clientX - heroRect.left) / heroRect.width - 0.5, -0.5, 0.5);
+    const normalizedY = clamp((event.clientY - heroRect.top) / heroRect.height - 0.5, -0.5, 0.5);
+    let pushX = 0;
+    let pushY = 0;
+    const dx = event.clientX - (tagRect.left + tagRect.width / 2);
+    const dy = event.clientY - (tagRect.top + tagRect.height / 2);
+    const distance = Math.hypot(dx, dy);
+    const radius = 190;
+
+    if (distance < radius && distance > 0.1) {
+      const force = Math.pow(1 - distance / radius, 1.55) * 27;
+      pushX = -(dx / distance) * force;
+      pushY = -(dy / distance) * force;
+    }
+
+    targetX = clamp(normalizedX * 9 + pushX, -31, 31);
+    targetY = clamp(normalizedY * 5 + pushY, -27, 27);
+    targetAngle = clamp(2 + targetX * 0.17 + targetY * 0.055, -5.5, 8);
+
+    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  };
+
+  const releaseRibbon = () => {
+    pointerInside = false;
+    targetX = 0;
+    targetY = 0;
+    targetAngle = 2;
+    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  };
+
+  ribbonHero.addEventListener("pointermove", nudgeRibbon, { passive: true });
+  ribbonHero.addEventListener("pointerleave", releaseRibbon, { passive: true });
+  ribbonTag.addEventListener("focus", () => {
+    targetY = -5;
+    targetAngle = 0;
+    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  });
+  ribbonTag.addEventListener("blur", releaseRibbon);
+  window.addEventListener("resize", () => {
+    if (!pointerInside) updateRibbonCord();
+  }, { passive: true });
+}
+
 /* ---------- Init ---------- */
 updateCartBadge();
 updateWishBadge();
