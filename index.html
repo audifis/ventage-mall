@@ -75,64 +75,148 @@
     <div class="hero-shade"></div>
     <div class="hero-light" aria-hidden="true"></div>
     <div class="hero-ribbon-scene" aria-label="Oferta especial Ventage Mall">
-      <svg class="hero-ribbon-art" viewBox="0 0 620 520" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="ventageSatin" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#061a39"/>
-            <stop offset="17%" stop-color="#164982"/>
-            <stop offset="30%" stop-color="#3c79b7"/>
-            <stop offset="43%" stop-color="#0b2c5b"/>
-            <stop offset="61%" stop-color="#2161a5"/>
-            <stop offset="76%" stop-color="#071e42"/>
-            <stop offset="89%" stop-color="#2868aa"/>
-            <stop offset="100%" stop-color="#061a39"/>
-          </linearGradient>
-          <linearGradient id="ventageSatinLight" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
-            <stop offset="22%" stop-color="#cbe5ff" stop-opacity=".7"/>
-            <stop offset="42%" stop-color="#fff" stop-opacity=".06"/>
-            <stop offset="63%" stop-color="#d6eaff" stop-opacity=".6"/>
-            <stop offset="82%" stop-color="#fff" stop-opacity=".04"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="ventageGold" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#8f642b"/>
-            <stop offset="25%" stop-color="#ffe7a8"/>
-            <stop offset="55%" stop-color="#bd914c"/>
-            <stop offset="80%" stop-color="#fff0bd"/>
-            <stop offset="100%" stop-color="#8d6028"/>
-          </linearGradient>
-          <filter id="ribbonShadow" x="-20%" y="-30%" width="140%" height="170%">
-            <feGaussianBlur stdDeviation="7"/>
-          </filter>
-        </defs>
-        <g id="heroSatinFabric">
-        <path d="M-38 84 C72 10 151 17 244 59 C335 101 391 115 460 77 C523 42 572 27 660 47 L660 124 C574 98 531 116 477 158 C394 221 325 184 224 133 C135 88 70 91 -38 168 Z"
-          fill="#03152e" opacity=".35" filter="url(#ribbonShadow)" transform="translate(0 8)"/>
-        <path d="M-38 84 C72 10 151 17 244 59 C335 101 391 115 460 77 C523 42 572 27 660 47 L660 124 C574 98 531 116 477 158 C394 221 325 184 224 133 C135 88 70 91 -38 168 Z"
-          fill="url(#ventageSatin)"/>
-        <path d="M-38 84 C72 10 151 17 244 59 C335 101 391 115 460 77 C523 42 572 27 660 47 L660 66 C571 53 526 69 464 111 C392 159 326 136 232 94 C140 53 69 51 -38 119 Z"
-          fill="url(#ventageSatinLight)" opacity=".76"/>
-        <path d="M-38 168 C70 91 135 88 224 133 C325 184 394 221 477 158 C531 116 574 98 660 124"
-          fill="none" stroke="url(#ventageGold)" stroke-width="3.2" opacity=".92"/>
-        <path class="hero-ribbon-glint" d="M-20 91 C78 31 151 33 243 73 C331 111 395 132 465 91 C526 56 579 46 644 63"
-          fill="none" stroke="#e4f2ff" stroke-width="5" stroke-linecap="round" opacity=".55"/>
-        </g>
-        <path id="heroRibbonCord" d="M438 143 C424 161 450 171 438 186"
-          fill="none" stroke="url(#ventageGold)" stroke-width="5" stroke-linecap="round"/>
-        <path d="M438 143 C424 161 450 171 438 186"
-          fill="none" stroke="#fff0c7" stroke-width="1.1" stroke-linecap="round" opacity=".78"/>
-        <circle cx="438" cy="145" r="12" fill="#b8873d" stroke="#ffe9b1" stroke-width="3"/>
-        <circle cx="438" cy="145" r="5" fill="#0d2b53"/>
-      </svg>
+      <svg class="hero-ribbon-art" viewBox="0 0 620 540" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="satinBase" x1="0%" y1="0%" x2="15%" y2="100%">
+      <stop offset="0%" stop-color="#06152f"/>
+      <stop offset="10%" stop-color="#174b87"/>
+      <stop offset="21%" stop-color="#5b9bd6"/>
+      <stop offset="31%" stop-color="#173d70"/>
+      <stop offset="43%" stop-color="#071b3b"/>
+      <stop offset="55%" stop-color="#2d73b9"/>
+      <stop offset="67%" stop-color="#0a2a54"/>
+      <stop offset="80%" stop-color="#4b8bc4"/>
+      <stop offset="91%" stop-color="#102e5c"/>
+      <stop offset="100%" stop-color="#04142c"/>
+    </linearGradient>
+    <linearGradient id="satinSheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d9edff" stop-opacity="0"/>
+      <stop offset="14%" stop-color="#d9edff" stop-opacity=".64"/>
+      <stop offset="23%" stop-color="#fff" stop-opacity=".12"/>
+      <stop offset="37%" stop-color="#061832" stop-opacity=".44"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity=".06"/>
+      <stop offset="62%" stop-color="#b8dcff" stop-opacity=".54"/>
+      <stop offset="76%" stop-color="#06162e" stop-opacity=".38"/>
+      <stop offset="88%" stop-color="#fff" stop-opacity=".34"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="satinFoldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#d9eeff" stop-opacity=".7"/>
+      <stop offset="58%" stop-color="#fff" stop-opacity=".94"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="satinFoldDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#031126" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#020d20" stop-opacity=".78"/>
+      <stop offset="100%" stop-color="#031126" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="satinEdgeGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#92672f"/>
+      <stop offset="22%" stop-color="#fff0bd"/>
+      <stop offset="48%" stop-color="#b9853d"/>
+      <stop offset="72%" stop-color="#fff1bf"/>
+      <stop offset="100%" stop-color="#8b5d27"/>
+    </linearGradient>
+    <linearGradient id="satinThread" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff2c4"/>
+      <stop offset="50%" stop-color="#a87939"/>
+      <stop offset="100%" stop-color="#fbe5ad"/>
+    </linearGradient>
+    <filter id="satinDrop" x="-20%" y="-45%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="13"/>
+    </filter>
+    <filter id="satinSoftFold" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="satinMicroTexture" x="-4%" y="-18%" width="108%" height="136%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.12" numOctaves="1" seed="11" result="grain"/>
+      <feDisplacementMap in="SourceGraphic" in2="grain" scale="4.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="tagDrop3d" x="-30%" y="-30%" width="170%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <clipPath id="satinClip">
+      <path id="heroSatinClip" d="M-34 102 C45 28 83 45 132 98 C188 159 227 184 286 132 C344 80 388 24 438 62 C493 105 529 184 654 112 L654 228 C540 292 500 201 436 144 C388 102 351 132 299 196 C235 273 187 245 123 169 C76 113 34 129 -34 205 Z"/>
+    </clipPath>
+  </defs>
+
+  <path id="heroSatinShadow" d="M-34 102 C45 28 83 45 132 98 C188 159 227 184 286 132 C344 80 388 24 438 62 C493 105 529 184 654 112 L654 228 C540 292 500 201 436 144 C388 102 351 132 299 196 C235 273 187 245 123 169 C76 113 34 129 -34 205 Z"
+    fill="#020b1a" opacity=".8" filter="url(#satinDrop)" transform="translate(0 17)"/>
+  <path id="heroSatinFabric" d="M-34 102 C45 28 83 45 132 98 C188 159 227 184 286 132 C344 80 388 24 438 62 C493 105 529 184 654 112 L654 228 C540 292 500 201 436 144 C388 102 351 132 299 196 C235 273 187 245 123 169 C76 113 34 129 -34 205 Z"
+    fill="url(#satinBase)" stroke="#0a2346" stroke-width="2"/>
+  <g clip-path="url(#satinClip)" filter="url(#satinMicroTexture)">
+    <rect x="-40" y="0" width="700" height="260" fill="url(#satinSheen)" opacity=".8"/>
+    <path id="heroSatinFoldShadows" d="
+      M-20 126 C54 72 94 108 134 146 C180 190 230 211 286 161 C341 112 390 52 438 82 C497 119 540 178 650 144
+      M-20 166 C50 126 96 145 141 176 C191 211 232 224 294 183 C349 146 396 103 447 124 C510 151 560 205 650 187"
+      fill="none" stroke="url(#satinFoldDark)" stroke-width="42" opacity=".92" filter="url(#satinSoftFold)"/>
+    <path id="heroSatinFoldHighlights" d="
+      M-20 88 C54 42 100 78 144 117 C190 158 231 178 286 128 C342 77 388 27 440 55 C496 87 550 151 650 113
+      M-20 151 C46 104 93 126 138 157 C184 190 229 202 289 158 C344 113 392 70 443 93 C506 121 554 174 650 154"
+      fill="none" stroke="url(#satinFoldLight)" stroke-width="10" stroke-linecap="round" opacity=".68"/>
+    <path id="heroSatinFineHighlights" d="
+      M-20 96 C55 52 102 86 148 126 C195 166 230 186 286 137 C345 88 389 38 438 66 C495 99 548 157 650 124
+      M-20 160 C50 116 95 138 140 168 C187 201 232 213 292 169 C348 124 394 81 444 104 C505 131 557 185 650 166"
+      fill="none" stroke="#e8f4ff" stroke-width="2.6" stroke-linecap="round" opacity=".52"/>
+    <path id="heroSatinGloss" d="" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" opacity=".17" filter="url(#satinSoftFold)"/>
+    <path id="heroSatinCrossShadows" d="
+      M74 63 C82 87 102 126 104 171
+      M146 108 C166 142 176 176 165 205
+      M285 132 C302 161 303 190 287 220
+      M438 62 C451 99 470 132 485 163
+      M548 137 C565 169 592 197 613 216"
+      fill="none" stroke="url(#satinFoldDark)" stroke-width="15" stroke-linecap="round" opacity=".64" filter="url(#satinSoftFold)"/>
+    <path id="heroSatinCrossHighlights" d="
+      M69 68 C78 90 94 127 96 159
+      M141 111 C158 144 164 174 155 193
+      M279 136 C294 164 294 188 281 208
+      M432 66 C447 103 461 130 476 153
+      M541 141 C557 172 580 195 601 209"
+      fill="none" stroke="url(#satinFoldLight)" stroke-width="4" stroke-linecap="round" opacity=".62"/>
+  </g>
+  <path id="heroSatinTopEdge" d="M-30 80 C120 30 230 150 380 94 C500 45 570 65 650 72"
+    fill="none" stroke="url(#satinEdgeGold)" stroke-width="2.1" opacity=".94"/>
+  <path id="heroSatinBottomEdge" d="M-30 168 C90 191 205 145 355 186 C465 215 530 160 650 166"
+    fill="none" stroke="url(#satinEdgeGold)" stroke-width="1.8" opacity=".9"/>
+
+  <g id="heroRibbonTie" transform="translate(438 145)">
+    <path d="M-34 -16 C-15 -8 13 -9 33 -18 L31 13 C13 22 -14 21 -34 12 Z"
+      fill="url(#satinBase)" stroke="#244f7e" stroke-width="1.4"/>
+    <path d="M-30 -10 C-9 -2 12 -4 29 -12" fill="none" stroke="#c3e4ff" stroke-width="3" opacity=".56"/>
+    <path d="M-30 10 C-8 17 11 16 28 8" fill="none" stroke="#03162f" stroke-width="4" opacity=".52"/>
+    <path d="M-5 -3 C-22 -34 -60 -31 -47 -4 C-39 12 -17 13 -5 2 C-17 1 -27 -7 -33 -17 C-23 -11 -13 -6 -5 -3 Z"
+      fill="url(#satinBase)" stroke="#6ea4d5" stroke-width="1.3"/>
+    <path d="M5 -3 C22 -34 60 -31 47 -4 C39 12 17 13 5 2 C17 1 27 -7 33 -17 C23 -11 13 -6 5 -3 Z"
+      fill="url(#satinBase)" stroke="#6ea4d5" stroke-width="1.3"/>
+    <path d="M-4 -8 C-15 -22 -34 -24 -43 -11" fill="none" stroke="#e1f2ff" stroke-width="3.2" stroke-linecap="round" opacity=".76"/>
+    <path d="M4 -8 C15 -22 34 -24 43 -11" fill="none" stroke="#e1f2ff" stroke-width="3.2" stroke-linecap="round" opacity=".76"/>
+    <path d="M-8 -6 C-9 11 8 11 8 -6 C5 -13 -5 -13 -8 -6 Z"
+      fill="url(#satinEdgeGold)" stroke="#fff0c4" stroke-width="1"/>
+  </g>
+
+  <path id="heroRibbonCordShadow" d="M438 158 C431 190 455 205 438 236"
+    fill="none" stroke="#020b1a" stroke-width="10" opacity=".5" filter="url(#satinSoftFold)"/>
+  <path id="heroRibbonCord" d="M438 158 C431 190 455 205 438 236"
+    fill="none" stroke="url(#satinThread)" stroke-width="5.4" stroke-linecap="round"/>
+  <path id="heroRibbonCordGlint" d="M438 158 C431 190 455 205 438 236"
+    fill="none" stroke="#fff4cf" stroke-width="1.2" stroke-linecap="round" opacity=".9"/>
+  <ellipse id="heroRibbonKnotShadow" cx="438" cy="158" rx="15" ry="8" fill="#020a17" opacity=".35" filter="url(#satinSoftFold)"/>
+  <g id="heroRibbonKnot" transform="translate(438 158)">
+    <path d="M-17 0 C-12 -12 12 -12 17 0 C11 13 -11 13 -17 0 Z" fill="url(#satinBase)" stroke="#9bc5ed" stroke-width="1.3"/>
+    <path d="M-12 -2 C-5 -7 6 -7 12 -2" fill="none" stroke="#e7f4ff" stroke-width="2.4" opacity=".66"/>
+    <path d="M0 -8 C-8 3 -7 9 0 11 C8 8 8 2 0 -8 Z" fill="#153b6d" stroke="#6096c6" stroke-width="1"/>
+  </g>
+</svg>
       <button class="hero-ribbon-tag" type="button" data-rayon="promo" aria-label="Descubrir las ofertas especiales de Ventage Mall">
-        <span class="hero-ribbon-eyelet" aria-hidden="true"></span>
-        <span class="hero-tag-brand">VENTAGE MALL</span>
-        <span class="hero-tag-kicker">OFERTA ESPECIAL</span>
-        <span class="hero-tag-amount">−30<span>%</span></span>
-        <span class="hero-tag-caption">Style · Élégance · Prestige</span>
-        <span class="hero-tag-cta">DESCUBRIR <b>→</b></span>
-      </button>
+  <span class="hero-ribbon-card-side" aria-hidden="true"></span>
+  <span class="hero-ribbon-eyelet" aria-hidden="true"><i></i></span>
+  <span class="hero-tag-brand">VENTAGE MALL</span>
+  <span class="hero-tag-kicker">OFERTA ESPECIAL</span>
+  <span class="hero-tag-amount"><i class="hero-tag-minus">-</i>30<span>%</span></span>
+  <span class="hero-tag-caption">STYLE &#183; ELEGANCE &#183; PRESTIGE</span>
+  <span class="hero-tag-cta">DESCUBRIR <b>&#8594;</b></span>
+</button>
     </div>
     <div class="hero-content">
       <p class="hero-kicker">VENTAGE MALL <span>·</span> MALABO</p>

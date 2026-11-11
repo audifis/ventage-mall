@@ -779,126 +779,375 @@ if (heroSpotlight && finePointer.matches && !reducedMotion.matches) {
   }, { passive: true });
 }
 
-/* ---------- Suspended satin tag: soft mouse collision + spring return ---------- */
+/* ---------- Dimensional satin ribbon: damped pendulum + live fabric mesh ---------- */
 const ribbonHero = document.querySelector(".hero");
 const ribbonScene = document.querySelector(".hero-ribbon-scene");
+const ribbonSvg = ribbonScene?.querySelector("svg");
 const ribbonTag = document.querySelector(".hero-ribbon-tag");
 const ribbonCord = document.getElementById("heroRibbonCord");
-const ribbonFabric = document.getElementById("heroSatinFabric");
+const ribbonCordGlint = document.getElementById("heroRibbonCordGlint");
+const ribbonKnot = document.getElementById("heroRibbonKnot");
+const ribbonKnotShadow = document.getElementById("heroRibbonKnotShadow");
+const satinShadow = document.getElementById("heroSatinShadow");
+const satinFabric = document.getElementById("heroSatinFabric");
+const satinClip = document.getElementById("heroSatinClip");
+const satinTop = document.getElementById("heroSatinTopEdge");
+const satinBottom = document.getElementById("heroSatinBottomEdge");
+const satinFoldShadows = document.getElementById("heroSatinFoldShadows");
+const satinFoldHighlights = document.getElementById("heroSatinFoldHighlights");
+const satinFineHighlights = document.getElementById("heroSatinFineHighlights");
+const satinGloss = document.getElementById("heroSatinGloss");
 
-if (ribbonHero && ribbonScene && ribbonTag && ribbonCord && ribbonFabric && finePointer.matches && !reducedMotion.matches) {
-  let pointerInside = false;
-  let tagX = 0;
-  let tagY = 0;
-  let velocityX = 0;
-  let velocityY = 0;
-  let tagAngle = 2;
-  let velocityAngle = 0;
-  let targetX = 0;
-  let targetY = 0;
-  let targetAngle = 2;
+if (ribbonHero && ribbonScene && ribbonSvg && ribbonTag && ribbonCord && satinFabric && !reducedMotion.matches) {
+  const mobileRibbon = window.matchMedia("(max-width: 760px)");
+  const clampRibbon = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  const WIDTH = 620;
+  const HEIGHT = 540;
+  const POINTS = 23;
+  const X0 = -34;
+  const X1 = 654;
+
+  let pointerActive = false;
+  let pointerX = 0;
+  let pointerY = 0;
+  let pointerVX = 0;
+  let pointerVY = 0;
+  let lastPointerX = 0;
+  let lastPointerY = 0;
+  let lastPointerTime = 0;
+
+  let cardX = 0;
+  let cardY = 0;
+  let cardVX = 0;
+  let cardVY = 0;
+  let cardAngle = 0;
+  let cardOmega = 0;
+  let cardTiltX = 0;
+  let cardTiltY = 0;
+
+  let lastFrameTime = 0;
   let ribbonFrame = 0;
+  let heroVisible = true;
+  let previousGeometry = null;
 
-  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+  const smoothPath = (points) => {
+    if (!points.length) return "";
+    let d = "M " + points[0].x.toFixed(2) + " " + points[0].y.toFixed(2);
+    for (let i = 0; i < points.length - 1; i++) {
+      const p0 = points[Math.max(0, i - 1)];
+      const p1 = points[i];
+      const p2 = points[i + 1];
+      const p3 = points[Math.min(points.length - 1, i + 2)];
+      const c1x = p1.x + (p2.x - p0.x) / 6;
+      const c1y = p1.y + (p2.y - p0.y) / 6;
+      const c2x = p2.x - (p3.x - p1.x) / 6;
+      const c2y = p2.y - (p3.y - p1.y) / 6;
+      d += " C " + c1x.toFixed(2) + " " + c1y.toFixed(2) +
+        ", " + c2x.toFixed(2) + " " + c2y.toFixed(2) +
+        ", " + p2.x.toFixed(2) + " " + p2.y.toFixed(2);
+    }
+    return d;
+  };
 
-  const updateRibbonCord = () => {
-    const svgRect = ribbonScene.querySelector("svg").getBoundingClientRect();
-    const scaleX = 620 / (svgRect.width || 1);
-    const scaleY = 520 / (svgRect.height || 1);
-    const holeX = (ribbonTag.offsetLeft + ribbonTag.offsetWidth / 2 + tagX) * scaleX;
-    const holeY = (ribbonTag.offsetTop - 7 + tagY) * scaleY;
-    const anchorX = 438;
-    const anchorY = 145;
-    const midX = (anchorX + holeX) / 2;
-    const path = "M " + anchorX + " " + anchorY +
-      " C " + (midX - 18) + " " + (anchorY + 24) +
-      ", " + (midX + 18) + " " + (holeY - 24) +
-      ", " + holeX + " " + holeY;
+  const closedBand = (top, bottom) => {
+    const topD = smoothPath(top);
+    const bottomD = smoothPath(bottom.slice().reverse()).replace(/^M/, "L");
+    return topD + " L " + bottom[bottom.length - 1].x.toFixed(2) + " " +
+      bottom[bottom.length - 1].y.toFixed(2) + " " + bottomD + " Z";
+  };
+
+  const lineAtFraction = (top, bottom, fraction, phase, amplitude) => {
+    return top.map((point, i) => {
+      const lower = bottom[i];
+      const t = i / (top.length - 1);
+      const ripple = Math.sin(t * 13.2 + phase + fraction * 8.5) *
+        Math.sin(Math.PI * t) * amplitude;
+      return {
+        x: point.x,
+        y: point.y + (lower.y - point.y) * fraction + ripple
+      };
+    });
+  };
+
+  const setPath = (element, value) => {
+    if (element) element.setAttribute("d", value);
+  };
+
+  const updateCord = (anchorX, anchorY) => {
+    const rect = ribbonSvg.getBoundingClientRect();
+    const cardRect = ribbonTag.getBoundingClientRect();
+    const endX = ((cardRect.left + cardRect.width * .5 - rect.left) / (rect.width || 1)) * WIDTH;
+    const endY = ((cardRect.top + 2 - rect.top) / (rect.height || 1)) * HEIGHT;
+    const dx = endX - anchorX;
+    const dy = endY - anchorY;
+    const sag = clamp(Math.abs(dx) * .12 + Math.abs(dy) * .08, 18, 52);
+    const midX = anchorX + dx * .52;
+    const midY = anchorY + dy * .58 + sag;
+    const path = "M " + anchorX.toFixed(2) + " " + anchorY.toFixed(2) +
+      " C " + (anchorX + dx * .14).toFixed(2) + " " + (anchorY + sag * .7).toFixed(2) +
+      ", " + (midX + cardVX * .18).toFixed(2) + " " + midY.toFixed(2) +
+      ", " + endX.toFixed(2) + " " + endY.toFixed(2);
     ribbonCord.setAttribute("d", path);
-    const goldEcho = ribbonCord.nextElementSibling;
-    if (goldEcho && goldEcho.tagName.toLowerCase() === "path") goldEcho.setAttribute("d", path);
+    if (ribbonCordGlint) ribbonCordGlint.setAttribute("d", path);
   };
 
-  const animateRibbon = () => {
-    const spring = 0.085;
-    velocityX = (velocityX + (targetX - tagX) * spring) * 0.79;
-    velocityY = (velocityY + (targetY - tagY) * spring) * 0.79;
-    velocityAngle = (velocityAngle + (targetAngle - tagAngle) * 0.075) * 0.82;
-    tagX += velocityX;
-    tagY += velocityY;
-    tagAngle += velocityAngle;
+  const drawFabric = (now, windX, windY, energy, angle) => {
+    const seconds = now * .001;
+    const phase = seconds * 1.55;
+    const top = [];
+    const bottom = [];
+    const mid = [];
 
-    ribbonTag.style.setProperty("--tag-x", tagX.toFixed(2) + "px");
-    ribbonTag.style.setProperty("--tag-y", tagY.toFixed(2) + "px");
-    ribbonTag.style.setProperty("--tag-rotation", tagAngle.toFixed(2) + "deg");
-    const fabricX = (tagX * 0.13).toFixed(2);
-    const fabricY = (tagY * 0.09).toFixed(2);
-    const fabricAngle = (tagAngle * 0.10).toFixed(2);
-    ribbonFabric.setAttribute(
-      "transform",
-      "translate(" + fabricX + " " + fabricY + ") rotate(" + fabricAngle + " 438 145)"
-    );
-    updateRibbonCord();
+    for (let i = 0; i < POINTS; i++) {
+      const t = i / (POINTS - 1);
+      const x = X0 + (X1 - X0) * t;
+      const envelope = Math.sin(Math.PI * t);
+      const slowDrape =
+        Math.sin(t * 4.5 + .2) * 48 +
+        Math.sin(t * 9.2 - .6) * 22 +
+        Math.sin(t * 15.3 + phase * .16) * 6;
+      const travelingWave =
+        Math.sin(t * 12.8 - phase * 1.85) * (5.5 + energy * 23) * envelope +
+        Math.sin(t * 6.4 - phase * .72) * (3.2 + energy * 8) * envelope;
+      const fineRipple =
+        Math.sin(t * 34 - phase * 3.2) * (2.2 + energy * 5.2) * envelope;
+      const windBend = (windY * 12 + windX * 8.5) * Math.pow(t, 1.25);
+      const tugBend = (cardY * .17 + cardVX * .34 + angle * 1.25) * Math.pow(t, 1.65);
+      const center = 105 + slowDrape + travelingWave + fineRipple + windBend + tugBend;
+      const width = 91 +
+        Math.sin(t * 6.9 + phase * .5) * 15 +
+        Math.sin(t * 15.8 - phase * .8) * (5 + energy * 4);
+      const edgeNoise = Math.sin(t * 31 + phase * 1.9) * (1.8 + energy * 3.3) * envelope;
+      const topPoint = { x, y: center - width * .5 + edgeNoise };
+      const bottomPoint = { x, y: center + width * .5 - edgeNoise * .72 };
+      top.push(topPoint);
+      bottom.push(bottomPoint);
+      mid.push({ x, y: center });
+    }
 
-    const unsettled = Math.abs(targetX - tagX) + Math.abs(targetY - tagY) > 0.12
-      || Math.abs(velocityX) + Math.abs(velocityY) > 0.12
-      || Math.abs(targetAngle - tagAngle) > 0.03
-      || Math.abs(velocityAngle) > 0.03;
+    const band = closedBand(top, bottom);
+    setPath(satinFabric, band);
+    setPath(satinClip, band);
+    setPath(satinShadow, band);
 
-    if (unsettled) {
-      ribbonFrame = window.requestAnimationFrame(animateRibbon);
-    } else {
+    setPath(satinTop, smoothPath(top));
+    setPath(satinBottom, smoothPath(bottom));
+
+    const darkLines = [
+      lineAtFraction(top, bottom, .19, phase, 6.4),
+      lineAtFraction(top, bottom, .49, phase + 2.1, 5.8),
+      lineAtFraction(top, bottom, .79, phase + 4.3, 5.2)
+    ];
+    const brightLines = [
+      lineAtFraction(top, bottom, .10, phase + .7, 4.8),
+      lineAtFraction(top, bottom, .35, phase + 3.0, 5.8),
+      lineAtFraction(top, bottom, .63, phase + 5.1, 5.2),
+      lineAtFraction(top, bottom, .91, phase + 1.7, 3.8)
+    ];
+    const fineLines = [
+      lineAtFraction(top, bottom, .15, phase + 1.1, 2.7),
+      lineAtFraction(top, bottom, .42, phase + 4.2, 2.4),
+      lineAtFraction(top, bottom, .72, phase + 2.6, 2.8)
+    ];
+
+    setPath(satinFoldShadows, darkLines.map(smoothPath).join(" "));
+    setPath(satinFoldHighlights, brightLines.map(smoothPath).join(" "));
+    setPath(satinFineHighlights, fineLines.map(smoothPath).join(" "));
+    setPath(satinGloss, smoothPath(lineAtFraction(top, bottom, .31, phase + 1.8, 10)));
+
+    const crossShadow = [];
+    const crossHighlight = [];
+    [.14,.31,.49,.68,.86].forEach((t,index) => {
+      const pointIndex = Math.round(t * (POINTS - 1));
+      const up = top[pointIndex];
+      const down = bottom[pointIndex];
+      const centerY = (up.y + down.y) * .5;
+      const bow = Math.sin(phase * 1.15 + index * 1.7) * (7 + energy * 8);
+      const c1x = up.x + bow;
+      const c2x = down.x - bow * .55;
+      crossShadow.push(
+        "M " + up.x.toFixed(2) + " " + up.y.toFixed(2) +
+        " C " + c1x.toFixed(2) + " " + (centerY - 10).toFixed(2) +
+        ", " + c2x.toFixed(2) + " " + (centerY + 10).toFixed(2) +
+        ", " + down.x.toFixed(2) + " " + down.y.toFixed(2)
+      );
+      crossHighlight.push(
+        "M " + (up.x - 2).toFixed(2) + " " + (up.y + 5).toFixed(2) +
+        " C " + (c1x - 2).toFixed(2) + " " + (centerY - 8).toFixed(2) +
+        ", " + (c2x - 2).toFixed(2) + " " + (centerY + 6).toFixed(2) +
+        ", " + (down.x - 2).toFixed(2) + " " + (down.y - 5).toFixed(2)
+      );
+    });
+    setPath(document.getElementById("heroSatinCrossShadows"), crossShadow.join(" "));
+    setPath(document.getElementById("heroSatinCrossHighlights"), crossHighlight.join(" "));
+
+    const tieIndex = Math.round((.735) * (POINTS - 1));
+    const tiePoint = mid[tieIndex];
+    const tieY = tiePoint.y + 24;
+    if (ribbonKnot) ribbonKnot.setAttribute("transform", "translate(468 " + tieY.toFixed(2) + ")");
+    if (ribbonKnotShadow) {
+      ribbonKnotShadow.setAttribute("cx", "468");
+      ribbonKnotShadow.setAttribute("cy", (tieY + 3).toFixed(2));
+    }
+    updateCord(468, tieY + 8);
+  };
+
+  const applyCardTransform = () => {
+    ribbonTag.style.setProperty("--tag-x", cardX.toFixed(2) + "px");
+    ribbonTag.style.setProperty("--tag-y", cardY.toFixed(2) + "px");
+    ribbonTag.style.setProperty("--tag-rotation", cardAngle.toFixed(2) + "deg");
+    ribbonTag.style.setProperty("--tag-tilt-x", cardTiltX.toFixed(2) + "deg");
+    ribbonTag.style.setProperty("--tag-tilt-y", cardTiltY.toFixed(2) + "deg");
+  };
+
+  const animateRibbon = (now) => {
+    if (!heroVisible || document.visibilityState === "hidden") {
       ribbonFrame = 0;
+      lastFrameTime = 0;
+      return;
     }
-  };
+    if (lastFrameTime && now - lastFrameTime < 30) {
+      ribbonFrame = window.requestAnimationFrame(animateRibbon);
+      return;
+    }
+    const dt = lastFrameTime ? clamp((now - lastFrameTime) / 16.667, .65, 2.2) : 1;
+    lastFrameTime = now;
 
-  const nudgeRibbon = (event) => {
-    if (event.pointerType !== "mouse") return;
+    const isMobile = mobileRibbon.matches;
+    const maxTravelX = isMobile ? 26 : 74;
+    const maxTravelY = isMobile ? 22 : 54;
+
+    let collisionX = 0;
+    let collisionY = 0;
+    let proximity = 0;
+    if (pointerActive) {
+      const rect = ribbonTag.getBoundingClientRect();
+      const centerX = rect.left + rect.width * .5;
+      const centerY = rect.top + rect.height * .4;
+      const dx = centerX - pointerX;
+      const dy = centerY - pointerY;
+      const distance = Math.max(1, Math.hypot(dx, dy));
+      proximity = clamp(1 - distance / (isMobile ? 155 : 230), 0, 1);
+      const hit = proximity * proximity;
+      const cursorSpeed = Math.min(1.8, Math.hypot(pointerVX, pointerVY) / 34);
+      const impulse = hit * (3.6 + cursorSpeed * 3.4);
+      collisionX = (dx / distance) * impulse;
+      collisionY = (dy / distance) * impulse;
+      if (document.activeElement === ribbonTag) {
+        collisionX *= .18;
+        collisionY *= .18;
+      }
+    }
+
+    const ambient = isMobile ? .75 : .55;
+    const breezeX = pointerActive ? pointerVX * .07 : Math.sin(now * .00072) * ambient;
+    const breezeY = pointerActive ? pointerVY * .055 : Math.sin(now * .00091 + 1.1) * ambient;
+    const springX = -.018 * cardX;
+    const springY = -.021 * cardY;
+    const pointerPushX = collisionX + breezeX * (pointerActive ? .42 : .2);
+    const pointerPushY = collisionY + breezeY * (pointerActive ? .36 : .16);
+
+    cardVX += (springX + pointerPushX) * dt;
+    cardVY += (springY + pointerPushY + .018 * Math.sin(now * .0011)) * dt;
+    cardVX *= Math.pow(.935, dt);
+    cardVY *= Math.pow(.925, dt);
+    cardX = clamp(cardX + cardVX * dt, -maxTravelX, maxTravelX);
+    cardY = clamp(cardY + cardVY * dt, -maxTravelY, maxTravelY);
+
+    const cardCenter = ribbonTag.getBoundingClientRect();
+    const leverX = pointerX - (cardCenter.left + cardCenter.width * .5);
+    const leverY = pointerY - (cardCenter.top + cardCenter.height * .45);
+    const torque = pointerActive
+      ? (collisionX * leverY - collisionY * leverX) * .00135 + breezeX * .055
+      : breezeX * .025;
+    cardOmega += (-cardAngle * .024 - cardOmega * .082 + torque) * dt;
+    cardOmega *= Math.pow(.955, dt);
+    cardAngle = clamp(cardAngle + cardOmega * dt, -22, 22);
+
+    const rect = ribbonTag.getBoundingClientRect();
     const heroRect = ribbonHero.getBoundingClientRect();
-    const tagRect = ribbonTag.getBoundingClientRect();
-    pointerInside = true;
+    const normalizedX = pointerActive ? clamp((pointerX - heroRect.left) / heroRect.width - .5, -.5, .5) : 0;
+    const normalizedY = pointerActive ? clamp((pointerY - heroRect.top) / heroRect.height - .5, -.5, .5) : 0;
+    const desiredTiltX = pointerActive ? clamp(-normalizedY * 10 - cardVY * .24, -8, 8) : Math.sin(now * .001) * .65;
+    const desiredTiltY = pointerActive ? clamp(normalizedX * 12 + cardVX * .28, -10, 10) : Math.sin(now * .00083 + .7) * .8;
+    cardTiltX += (desiredTiltX - cardTiltX) * .085 * dt;
+    cardTiltY += (desiredTiltY - cardTiltY) * .085 * dt;
 
-    const normalizedX = clamp((event.clientX - heroRect.left) / heroRect.width - 0.5, -0.5, 0.5);
-    const normalizedY = clamp((event.clientY - heroRect.top) / heroRect.height - 0.5, -0.5, 0.5);
-    let pushX = 0;
-    let pushY = 0;
-    const dx = event.clientX - (tagRect.left + tagRect.width / 2);
-    const dy = event.clientY - (tagRect.top + tagRect.height / 2);
-    const distance = Math.hypot(dx, dy);
-    const radius = 190;
+    applyCardTransform();
 
-    if (distance < radius && distance > 0.1) {
-      const force = Math.pow(1 - distance / radius, 1.55) * 27;
-      pushX = -(dx / distance) * force;
-      pushY = -(dy / distance) * force;
+    const energy = clamp(Math.hypot(breezeX, breezeY) * .11 +
+      Math.hypot(cardVX, cardVY) * .075 + Math.abs(cardAngle) * .018 + proximity * .48, 0, 1.5);
+    drawFabric(now, breezeX + cardVX * .09, breezeY + cardVY * .08, energy, cardAngle);
+
+    pointerVX *= Math.pow(.88, dt);
+    pointerVY *= Math.pow(.88, dt);
+
+    ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  };
+
+  const pointerMove = (event) => {
+    if (event.pointerType !== "mouse") return;
+    const now = performance.now();
+    if (lastPointerTime) {
+      const elapsed = Math.max(8, now - lastPointerTime);
+      const scale = 16.667 / elapsed;
+      const rawX = clamp((event.clientX - lastPointerX) * scale, -72, 72);
+      const rawY = clamp((event.clientY - lastPointerY) * scale, -72, 72);
+      pointerVX = pointerVX * .32 + rawX * .68;
+      pointerVY = pointerVY * .32 + rawY * .68;
     }
-
-    targetX = clamp(normalizedX * 9 + pushX, -31, 31);
-    targetY = clamp(normalizedY * 5 + pushY, -27, 27);
-    targetAngle = clamp(2 + targetX * 0.17 + targetY * 0.055, -5.5, 8);
-
-    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    lastPointerX = event.clientX;
+    lastPointerY = event.clientY;
+    lastPointerTime = now;
+    pointerActive = true;
+    if (!ribbonFrame && heroVisible) ribbonFrame = window.requestAnimationFrame(animateRibbon);
   };
 
-  const releaseRibbon = () => {
-    pointerInside = false;
-    targetX = 0;
-    targetY = 0;
-    targetAngle = 2;
-    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  const pointerLeave = () => {
+    pointerActive = false;
+    lastPointerTime = 0;
   };
 
-  ribbonHero.addEventListener("pointermove", nudgeRibbon, { passive: true });
-  ribbonHero.addEventListener("pointerleave", releaseRibbon, { passive: true });
-  ribbonTag.addEventListener("focus", () => {
-    targetY = -5;
-    targetAngle = 0;
-    if (!ribbonFrame) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+  if (finePointer.matches) {
+    ribbonHero.addEventListener("pointermove", pointerMove, { passive: true });
+    ribbonHero.addEventListener("pointerleave", pointerLeave, { passive: true });
+    ribbonTag.addEventListener("focus", () => {
+      cardVY -= 1.2;
+      cardOmega -= 1.0;
+      if (!ribbonFrame && heroVisible) ribbonFrame = window.requestAnimationFrame(animateRibbon);
+    });
+  }
+
+  const startRibbon = () => {
+    if (!ribbonFrame && heroVisible && document.visibilityState !== "hidden") {
+      ribbonFrame = window.requestAnimationFrame(animateRibbon);
+    }
+  };
+  const stopRibbon = () => {
+    if (ribbonFrame) window.cancelAnimationFrame(ribbonFrame);
+    ribbonFrame = 0;
+    lastFrameTime = 0;
+  };
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      heroVisible = entries.some(entry => entry.isIntersecting);
+      if (heroVisible) startRibbon();
+      else stopRibbon();
+    }, { threshold: .04 });
+    observer.observe(ribbonHero);
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") stopRibbon();
+    else startRibbon();
   });
-  ribbonTag.addEventListener("blur", releaseRibbon);
   window.addEventListener("resize", () => {
-    if (!pointerInside) updateRibbonCord();
+    if (!ribbonFrame && heroVisible) startRibbon();
   }, { passive: true });
+
+  startRibbon();
 }
 
 /* ---------- Init ---------- */
