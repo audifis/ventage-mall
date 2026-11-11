@@ -2442,3 +2442,12 @@ html { text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
     padding:12px 7px 10px;
   }
 }
+/* Mobile hero copy only: keep the subtitle clear of the existing ribbon card. */
+@media (max-width:760px) {
+  .hero-sub {
+    max-width:clamp(145px,46vw,185px);
+    font-size:12px;
+    line-height:1.45;
+    overflow-wrap:normal;
+  }
+}
